@@ -3,6 +3,7 @@
 import Image from "next/image"
 import { useState } from "react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
+import { ChevronDown, ChevronUp } from "lucide-react"
 
 // プロジェクトデータの型定義
 interface Project {
@@ -10,6 +11,17 @@ interface Project {
   desc: string
   details: string
   technologies: string[]
+}
+
+// タイムラインイベントの型定義
+interface TimelineEvent {
+  year: string
+  title: string
+  description: string
+  organization?: string
+  date?: string
+  details?: string
+  isExpanded?: boolean
 }
 
 // Project data with additional details
@@ -61,10 +73,86 @@ const projects: Project[] = [
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
   const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false)
+  const [events, setEvents] = useState<TimelineEvent[]>([
+    {
+      year: "2025",
+      title: "インターンシップ",
+      description: "ATMとAndroidの接続関連の開発およびテストを行う",
+      organization: "日立チャネルソリューションズ株式会社",
+      date: "1月末",
+      details: "僕のいた部署は環境が最高でした。やる気に満ち溢れていました。",
+      isExpanded: false,
+    },
+    {
+      year: "2024",
+      title: "プロジェクトリーダー就任",
+      description: "大学のRoboCup@Homeプロジェクト",
+      organization: "チームのやる気を向上させる目標を掲げる",
+      isExpanded: false,
+    },
+    {
+      year: "2024",
+      title: "RCJ2024",
+      description: "TidyUpという競技を担当。物体認識から物体把持を行う。挙手判定や手渡しを書く。MilkyPublisherの開発",
+      organization: "死に物狂いでTidyUpを開発",
+      isExpanded: false,
+    },
+    {
+      year: "2023",
+      title: "MilkyPublisher開発",
+      description: "初心者向けロボットプログラミングアプリの開発",
+      details:
+        "プログラミング初心者でも簡単にロボットを制御できるアプリケーションです。ビジュアルプログラミングインターフェースを採用し、ドラッグ＆ドロップで命令を組み立てることができます。",
+      isExpanded: false,
+    },
+    {
+      year: "2023",
+      title: "技育CAMPハッカソン受賞",
+      description: "LENONプロジェクトで受賞",
+      details:
+        "音楽を通じて人々をつなげるプラットフォームで、好みの音楽に基づいてマッチングする機能や、共同プレイリスト作成機能などを実装しました。48時間という限られた時間の中で、チームワークを活かして完成させました。",
+      isExpanded: false,
+    },
+    {
+      year: "2022",
+      title: "DidLife開発開始",
+      description: "不登校自動を未然に防ぐアプリ開発",
+      details:
+        "不登校の兆候を早期に発見し、適切なサポートを提供するためのアプリです。生徒の出席パターン、学校での活動、気分の変化などを分析し、リスクがある場合に教師や保護者に通知します。",
+      isExpanded: false,
+    },
+    {
+      year: "2022",
+      title: "ShiftTape開発",
+      description: "シフト管理アプリの開発",
+      details:
+        "複雑なシフト管理を簡単にするためのアプリです。従業員のスケジュール調整、シフト交換リクエスト、勤務時間の追跡などの機能を提供します。",
+      isExpanded: false,
+    },
+    {
+      year: "2021",
+      title: "おかんに怒られる",
+      description: "全く新しいアラームアプリの開発",
+      details:
+        "従来のアラームとは一線を画す、ユニークなアラームアプリです。目覚まし時計として機能するだけでなく、「おかん」キャラクターが様々なセリフで起床を促します。スヌーズを繰り返すと、だんだん怒り度が増していくという面白い仕掛けも実装しています。",
+      isExpanded: false,
+    },
+    {
+      year: "2021",
+      title: "大学入学",
+      description: "金沢工業大学に入学",
+      details: "情報工学を専攻し、プログラミングの基礎を学び始める",
+      isExpanded: false,
+    },
+  ])
 
   const openProjectDetails = (project: Project) => {
     setSelectedProject(project)
     setIsDialogOpen(true)
+  }
+
+  const toggleExpand = (index: number) => {
+    setEvents(events.map((event, i) => (i === index ? { ...event, isExpanded: !event.isExpanded } : event)))
   }
 
   return (
@@ -73,7 +161,7 @@ export default function Home() {
       <header className="fixed top-0 w-full bg-[#3498db] text-white py-4 z-50 shadow-md">
         <nav className="container mx-auto px-4">
           <ul className="flex justify-end space-x-6 text-lg font-medium">
-            {["about", "skills", "projects", "reports", "contact"].map((section) => (
+            {["about", "skills", "projects", "timeline", "reports", "contact"].map((section) => (
               <li key={section} className="hover:text-yellow-300 transition-colors">
                 <a href={`#${section}`}>{section.charAt(0).toUpperCase() + section.slice(1)}</a>
               </li>
@@ -200,6 +288,85 @@ export default function Home() {
         )}
       </Dialog>
 
+      {/* Timeline Section */}
+      <section id="timeline" className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-semibold text-center text-sky-500 mb-10">輝いていたあの頃</h2>
+          <div className="max-w-5xl mx-auto">
+            <div className="relative">
+              {/* Timeline center line */}
+              <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-sky-500 transform -translate-x-1/2"></div>
+
+              {/* Timeline events */}
+              {events.map((event, index) => {
+                const isEven = index % 2 === 0
+
+                return (
+                  <div key={index} className="mb-12 relative flex justify-center items-center">
+                    {/* Year marker in center */}
+                    <div className="absolute left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-sky-500 border-4 border-white z-10 flex items-center justify-center text-xs text-white font-bold">
+                      {event.year.slice(-2)}
+                    </div>
+
+                    {/* Content positioning based on even/odd - responsive layout */}
+                    <div
+                      className={`w-full md:w-5/12 ${isEven ? "md:ml-auto pl-12 md:pl-0 md:pr-8" : "md:mr-auto pl-12 md:pl-8"} relative`}
+                    >
+                      {/* Event content */}
+                      <div className="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div className="bg-sky-500 text-white px-6 py-3 flex justify-between items-center">
+                          <span className="font-medium">{event.year}</span>
+                          <button
+                            onClick={() => toggleExpand(index)}
+                            className="text-white hover:bg-sky-600 rounded-full p-1"
+                            aria-label={event.isExpanded ? "折りたたむ" : "展開する"}
+                          >
+                            {event.isExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
+                          </button>
+                        </div>
+
+                        <div className="p-6">
+                          <h3 className="font-bold text-lg mb-2">{event.title}</h3>
+                          <p className="text-sm mb-4">{event.description}</p>
+
+                          {event.organization && (
+                            <div className="bg-purple-500 text-white text-sm rounded-md shadow-md p-3 text-center mb-3">
+                              {event.organization}
+                            </div>
+                          )}
+
+                          {event.date && (
+                            <div className="text-xs">
+                              <span className="text-lime-400">{event.date}</span>
+                            </div>
+                          )}
+
+                          {event.isExpanded && event.details && (
+                            <div className="mt-4 text-sm bg-gray-50 p-4 rounded-md border border-gray-100">
+                              {event.details}
+                            </div>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Mobile timeline dot */}
+                      <div className="absolute top-4 left-0 w-4 h-4 rounded-full bg-sky-500 border-2 border-white md:hidden"></div>
+                    </div>
+
+                    {/* Connector line to center - only visible on desktop */}
+                    <div
+                      className={`hidden md:block absolute top-4 h-0.5 bg-sky-500 w-[calc(25%-4px)] ${
+                        isEven ? "left-[calc(50%+4px)]" : "right-[calc(50%+4px)]"
+                      }`}
+                    ></div>
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Reports Section */}
       <section id="reports" className="py-16">
         <div className="container mx-auto px-4">
@@ -224,54 +391,6 @@ export default function Home() {
                 ・別のサイトはこちら
               </a>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Timeline Section */}
-      <section id="timeline" className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-semibold text-center text-sky-500 mb-10">輝いていたあの頃</h2>
-          <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* 2025年 */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="bg-sky-500 text-white text-lg px-6 py-3 text-center font-medium">2025年</div>
-              <div className="p-6">
-                <h3 className="font-bold text-lg mb-2">インターンシップ</h3>
-                <p className="text-sm mb-4">ATMとAndroidの接続関連の開発およびテストを行う</p>
-                <div className="bg-purple-500 text-white text-sm rounded-md shadow-md p-3 text-center mb-3">
-                  日立チャネルソリューションズ株式会社
-                </div>
-                <div className="text-xs">
-                  <span className="text-lime-400">1月末</span>
-                </div>
-                <p className="mt-4 text-sm">僕のいた部署は環境が最高でした。やる気に満ち溢れていました。</p>
-              </div>
-            </div>
-
-            {/* 思い出 */}
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="bg-sky-500 text-white text-lg px-6 py-3 text-center font-medium">思い出</div>
-              <div className="p-6 space-y-6">
-                <div className="bg-white rounded-lg shadow-sm p-4 hover:bg-gray-50 transition">
-                  <h3 className="font-bold text-lg">プロジェクトリーダー就任</h3>
-                  <p className="text-sm mt-2">大学のRoboCup@Homeプロジェクト</p>
-                  <div className="bg-purple-500 text-white text-sm rounded-md shadow-md p-3 text-center mt-4">
-                    チームのやる気を向上させる目標を掲げる
-                  </div>
-                </div>
-
-                <div className="bg-white rounded-lg shadow-sm p-4 hover:bg-gray-50 transition">
-                  <h3 className="font-bold text-lg">RCJ2024</h3>
-                  <p className="text-sm mt-2">
-                    TidyUpという競技を担当。物体認識から物体把持を行う。挙手判定や手渡しを書く。MilkyPublisherの開発
-                  </p>
-                  <div className="bg-purple-500 text-white text-sm rounded-md shadow-md p-3 text-center mt-4">
-                    死に物狂いでTidyUpを開発
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>

@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-white">
@@ -5,21 +7,11 @@ export default function Home() {
       <header className="fixed top-0 w-full bg-[#3498db] text-white py-4 z-50 shadow-md">
         <nav className="container mx-auto px-4">
           <ul className="flex justify-end space-x-6 text-lg font-medium">
-            <li className="hover:text-yellow-300 transition-colors">
-              <a href="#about">About</a>
-            </li>
-            <li className="hover:text-yellow-300 transition-colors">
-              <a href="#skills">Skills</a>
-            </li>
-            <li className="hover:text-yellow-300 transition-colors">
-              <a href="#projects">Projects</a>
-            </li>
-            <li className="hover:text-yellow-300 transition-colors">
-              <a href="#reports">Reports</a>
-            </li>
-            <li className="hover:text-yellow-300 transition-colors">
-              <a href="#contact">Contact</a>
-            </li>
+            {['about', 'skills', 'projects', 'reports', 'contact'].map((section) => (
+              <li key={section} className="hover:text-yellow-300 transition-colors">
+                <a href={`#${section}`}>{section.charAt(0).toUpperCase() + section.slice(1)}</a>
+              </li>
+            ))}
           </ul>
         </nav>
       </header>
@@ -27,9 +19,12 @@ export default function Home() {
       {/* Hero Section */}
       <section className="pt-32 pb-20 flex flex-col items-center px-4">
         <div className="mb-8 transform transition hover:scale-105 duration-300">
-          <img
+          <Image
             src="/monaka.png"
             alt="プロフィール画像"
+            width={192}
+            height={192}
+            priority
             className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-yellow-400 shadow-2xl"
           />
         </div>
@@ -40,46 +35,37 @@ export default function Home() {
       {/* About Section */}
       <section id="about" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-semibold text-center text-sky-500 mb-8">About me</h2>
-        <p className="text-xl text-center max-w-6xl mx-auto text-black">
-          金沢工業大学で情報工学を学んでいる"こたろう"と申します<br />
-          最近はAndroidアプリ開発にハマっていて、技術イベントにもよく出没します。<br />
-          コードを書いたり、最新技術を追ったりするのが好きで、つい時間を忘れてしまうタイプです。<br />
-          猫とゲームが癒し。
-          <span className="block mt-4 mb-6">気軽に話しかけてください！</span>
-        </p>
+          <h2 className="text-3xl font-semibold text-center text-sky-500 mb-8">About me</h2>
+          <p className="text-xl text-center max-w-6xl mx-auto text-black">
+            金沢工業大学で情報工学を学んでいる&quot;こたろう&quot;と申します
+            <br />
+            最近はAndroidアプリ開発にハマっていて、技術イベントにもよく出没します。
+            <br />
+            コードを書いたり、最新技術を追ったりするのが好きで、つい時間を忘れてしまうタイプです。
+            <br />
+            猫とゲームが癒し。
+            <span className="block mt-4 mb-6">気軽に話しかけてください！</span>
+          </p>
         </div>
       </section>
 
       {/* Skills Section */}
       <section id="skills" className="py-16">
         <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-semibold text-center text-sky-500 mb-10">Skills</h2>
-        <div className="flex justify-center flex-wrap gap-3 md:gap-4 max-w-4xl mx-auto">
-          {[
-            "Java",
-            "Jetpack Compose",
-            "SwiftUI",
-            "C",
-            "Python",
-            "Flutter",
-            "React",
-            "Next.js",
-            "Go",
-            "Kubernetes",
-            "LLM",
-            "Ruby",
-            "Unity",
-          ].map((skill) => (
-            <div
-              key={skill}
-              className="px-6 py-2 bg-emerald-500 text-white text-lg rounded-full hover:bg-emerald-600 transition shadow-sm"
-            >
-              {skill}
-            </div>
-          ))}
-        </div>
-
+          <h2 className="text-3xl font-semibold text-center text-sky-500 mb-10">Skills</h2>
+          <div className="flex justify-center flex-wrap gap-3 md:gap-4 max-w-4xl mx-auto">
+            {[
+              'Java', 'Jetpack Compose', 'SwiftUI', 'C', 'Python', 'Flutter',
+              'React', 'Next.js', 'Go', 'Kubernetes', 'LLM', 'Ruby', 'Unity',
+            ].map((skill) => (
+              <div
+                key={skill}
+                className="px-6 py-2 bg-emerald-500 text-white text-lg rounded-full hover:bg-emerald-600 transition shadow-sm"
+              >
+                {skill}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -87,15 +73,14 @@ export default function Home() {
       <section id="projects" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-semibold text-center text-sky-500 mb-8">プロジェクト（押すと詳細が読めます）</h2>
-
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {[
-              { title: "DidLife", desc: "不登校自動を未然に防ぐアプリ" },
-              { title: "ShiftTape", desc: "シフト管理アプリ" },
-              { title: "MilkyPublisher", desc: "初心者向けロボットプログラミングアプリ" },
-              { title: "プロジェクト詳細動画", desc: "大学で活動しているPJの紹介動画" },
-              { title: "LENON", desc: "技育CAMPハッカソンで受賞!" },
-              { title: "おかんに怒られる", desc: "全く新しいアラームアプリの開発" },
+              { title: 'DidLife', desc: '不登校自動を未然に防ぐアプリ' },
+              { title: 'ShiftTape', desc: 'シフト管理アプリ' },
+              { title: 'MilkyPublisher', desc: '初心者向けロボットプログラミングアプリ' },
+              { title: 'プロジェクト詳細動画', desc: '大学で活動しているPJの紹介動画' },
+              { title: 'LENON', desc: '技育CAMPハッカソンで受賞!' },
+              { title: 'おかんに怒られる', desc: '全く新しいアラームアプリの開発' },
             ].map((project) => (
               <button
                 key={project.title}
@@ -116,7 +101,6 @@ export default function Home() {
       <section id="reports" className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-semibold text-center text-sky-500 mb-8">レポート</h2>
-
           <div className="max-w-2xl mx-auto">
             <a
               href="https://store.supercell.com/ja/brawlstars"
@@ -145,7 +129,6 @@ export default function Home() {
       <section id="timeline" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-semibold text-center text-sky-500 mb-10">輝いていたあの頃</h2>
-
           <div className="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* 2025年 */}
             <div className="bg-white rounded-lg shadow-md overflow-hidden">
@@ -190,7 +173,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact Section (Added) */}
+      {/* Contact Section */}
       <section id="contact" className="py-16">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-semibold text-sky-500 mb-8">Contact</h2>
@@ -219,5 +202,5 @@ export default function Home() {
         </div>
       </footer>
     </main>
-  )
+  );
 }

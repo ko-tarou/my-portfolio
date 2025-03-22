@@ -3,7 +3,6 @@
 import Image from "next/image"
 import { useState } from "react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
-import { X } from "lucide-react"
 
 // プロジェクトデータの型定義
 interface Project {

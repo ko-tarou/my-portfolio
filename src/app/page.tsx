@@ -1,13 +1,80 @@
-import Image from 'next/image';
+"use client"
+
+import Image from "next/image"
+import { useState } from "react"
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
+import { X } from "lucide-react"
+
+// プロジェクトデータの型定義
+interface Project {
+  title: string
+  desc: string
+  details: string
+  technologies: string[]
+}
+
+// Project data with additional details
+const projects: Project[] = [
+  {
+    title: "DidLife",
+    desc: "不登校自動を未然に防ぐアプリ",
+    details:
+      "不登校の兆候を早期に発見し、適切なサポートを提供するためのアプリです。生徒の出席パターン、学校での活動、気分の変化などを分析し、リスクがある場合に教師や保護者に通知します。早期介入により、不登校を未然に防ぐことを目指しています。",
+    technologies: ["Android", "Jetpack Compose", "Firebase", "Machine Learning"],
+  },
+  {
+    title: "ShiftTape",
+    desc: "シフト管理アプリ",
+    details:
+      "複雑なシフト管理を簡単にするためのアプリです。従業員のスケジュール調整、シフト交換リクエスト、勤務時間の追跡などの機能を提供します。直感的なインターフェースで、管理者と従業員の両方にとって使いやすいシステムを実現しました。",
+    technologies: ["React Native", "Redux", "Node.js", "MongoDB"],
+  },
+  {
+    title: "MilkyPublisher",
+    desc: "初心者向けロボットプログラミングアプリ",
+    details:
+      "プログラミング初心者でも簡単にロボットを制御できるアプリケーションです。ビジュアルプログラミングインターフェースを採用し、ドラッグ＆ドロップで命令を組み立てることができます。教育現場での利用を想定し、段階的に学習できる構成になっています。",
+    technologies: ["Flutter", "Dart", "ROS", "Python"],
+  },
+  {
+    title: "プロジェクト詳細動画",
+    desc: "大学で活動しているPJの紹介動画",
+    details:
+      "大学のプロジェクト活動を紹介する動画シリーズを制作しました。各チームの取り組み、目標、成果を分かりやすく伝えることで、新たなメンバーの獲得や外部との連携強化を目指しています。撮影から編集まで全て担当しました。",
+    technologies: ["Adobe Premiere Pro", "After Effects", "Filmmaking", "Storytelling"],
+  },
+  {
+    title: "LENON",
+    desc: "技育CAMPハッカソンで受賞!",
+    details:
+      "技育CAMPハッカソンで開発し、受賞したプロジェクトです。音楽を通じて人々をつなげるプラットフォームで、好みの音楽に基づいてマッチングする機能や、共同プレイリスト作成機能などを実装しました。48時間という限られた時間の中で、チームワークを活かして完成させました。",
+    technologies: ["React", "Node.js", "Spotify API", "Socket.io"],
+  },
+  {
+    title: "おかんに怒られる",
+    desc: "全く新しいアラームアプリの開発",
+    details:
+      "従来のアラームとは一線を画す、ユニークなアラームアプリです。目覚まし時計として機能するだけでなく、「おかん」キャラクターが様々なセリフで起床を促します。スヌーズを繰り返すと、だんだん怒り度が増していくという面白い仕掛けも実装しています。",
+    technologies: ["Swift", "SwiftUI", "Core Audio", "Local Notifications"],
+  },
+]
 
 export default function Home() {
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null)
+  const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false)
+
+  const openProjectDetails = (project: Project) => {
+    setSelectedProject(project)
+    setIsDialogOpen(true)
+  }
+
   return (
     <main className="min-h-screen bg-white">
       {/* Fixed Navigation Header */}
       <header className="fixed top-0 w-full bg-[#3498db] text-white py-4 z-50 shadow-md">
         <nav className="container mx-auto px-4">
           <ul className="flex justify-end space-x-6 text-lg font-medium">
-            {['about', 'skills', 'projects', 'reports', 'contact'].map((section) => (
+            {["about", "skills", "projects", "reports", "contact"].map((section) => (
               <li key={section} className="hover:text-yellow-300 transition-colors">
                 <a href={`#${section}`}>{section.charAt(0).toUpperCase() + section.slice(1)}</a>
               </li>
@@ -55,8 +122,19 @@ export default function Home() {
           <h2 className="text-3xl font-semibold text-center text-sky-500 mb-10">Skills</h2>
           <div className="flex justify-center flex-wrap gap-3 md:gap-4 max-w-4xl mx-auto">
             {[
-              'Java', 'Jetpack Compose', 'SwiftUI', 'C', 'Python', 'Flutter',
-              'React', 'Next.js', 'Go', 'Kubernetes', 'LLM', 'Ruby', 'Unity',
+              "Java",
+              "Jetpack Compose",
+              "SwiftUI",
+              "C",
+              "Python",
+              "Flutter",
+              "React",
+              "Next.js",
+              "Go",
+              "Kubernetes",
+              "LLM",
+              "Ruby",
+              "Unity",
             ].map((skill) => (
               <div
                 key={skill}
@@ -74,16 +152,10 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-semibold text-center text-sky-500 mb-8">プロジェクト（押すと詳細が読めます）</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-            {[
-              { title: 'DidLife', desc: '不登校自動を未然に防ぐアプリ' },
-              { title: 'ShiftTape', desc: 'シフト管理アプリ' },
-              { title: 'MilkyPublisher', desc: '初心者向けロボットプログラミングアプリ' },
-              { title: 'プロジェクト詳細動画', desc: '大学で活動しているPJの紹介動画' },
-              { title: 'LENON', desc: '技育CAMPハッカソンで受賞!' },
-              { title: 'おかんに怒られる', desc: '全く新しいアラームアプリの開発' },
-            ].map((project) => (
+            {projects.map((project) => (
               <button
                 key={project.title}
+                onClick={() => openProjectDetails(project)}
                 className="h-36 px-6 py-6 bg-white text-sky-500 rounded-lg border-2 border-white shadow-xl 
                 hover:bg-gradient-to-r hover:from-orange-400 hover:via-pink-500 hover:to-purple-500 
                 hover:text-white hover:shadow-lg hover:-translate-y-1 active:scale-95 
@@ -96,6 +168,38 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Project Details Dialog */}
+      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+        {selectedProject && (
+          <DialogContent className="sm:max-w-md">
+            <DialogHeader>
+              <div className="flex items-center justify-between">
+                <DialogTitle className="text-xl font-bold text-sky-500">{selectedProject.title}</DialogTitle>
+              </div>
+              <DialogDescription className="text-base font-medium text-gray-700 mt-1">
+                {selectedProject.desc}
+              </DialogDescription>
+            </DialogHeader>
+            <div className="mt-4 space-y-4">
+              <div>
+                <h3 className="text-sm font-semibold text-gray-500 mb-2">詳細</h3>
+                <p className="text-sm text-gray-700">{selectedProject.details}</p>
+              </div>
+              <div>
+                <h3 className="text-sm font-semibold text-gray-500 mb-2">使用技術</h3>
+                <div className="flex flex-wrap gap-2">
+                  {selectedProject.technologies.map((tech) => (
+                    <span key={tech} className="px-3 py-1 bg-sky-100 text-sky-700 text-xs rounded-full">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </DialogContent>
+        )}
+      </Dialog>
 
       {/* Reports Section */}
       <section id="reports" className="py-16">
@@ -202,5 +306,6 @@ export default function Home() {
         </div>
       </footer>
     </main>
-  );
+  )
 }
+

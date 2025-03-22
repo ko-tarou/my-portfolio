@@ -16,7 +16,7 @@ interface Project {
 const projects: Project[] = [
   {
     title: "DidLife",
-    desc: "不登校自動を未然に防ぐアプリ",
+    desc: "不登校自動を未然に防ぐアプ",
     details:
       "不登校の兆候を早期に発見し、適切なサポートを提供するためのアプリです。生徒の出席パターン、学校での活動、気分の変化などを分析し、リスクがある場合に教師や保護者に通知します。早期介入により、不登校を未然に防ぐことを目指しています。",
     technologies: ["Android", "Jetpack Compose", "Firebase", "Machine Learning"],

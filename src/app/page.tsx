@@ -27,46 +27,46 @@ interface TimelineEvent {
 // Project data with additional details
 const projects: Project[] = [
   {
-    title: "DidLife",
-    desc: "不登校自動を未然に防ぐアプ",
+    title: "LogiLink",
+    desc: "配送業者同士の連携SNSアプリ",
     details:
-      "不登校の兆候を早期に発見し、適切なサポートを提供するためのアプリです。生徒の出席パターン、学校での活動、気分の変化などを分析し、リスクがある場合に教師や保護者に通知します。早期介入により、不登校を未然に防ぐことを目指しています。",
-    technologies: ["Android", "Jetpack Compose", "Firebase", "Machine Learning"],
+      "配送業者同士の連携をスムーズに行うためのアプリです。サプライチェーンの会社全てを繋ぎ、契約や受注などの流れを全て自動化することを目指したプロダクトです。2024年問題を解決することを目指しています。",
+    technologies: ["Android", "IOS", "Web", "AWS"],
   },
   {
-    title: "ShiftTape",
-    desc: "シフト管理アプリ",
+    title: "PresentsAI",
+    desc: "プレゼンシート作成アプリ",
     details:
-      "複雑なシフト管理を簡単にするためのアプリです。従業員のスケジュール調整、シフト交換リクエスト、勤務時間の追跡などの機能を提供します。直感的なインターフェースで、管理者と従業員の両方にとって使いやすいシステムを実現しました。",
-    technologies: ["React Native", "Redux", "Node.js", "MongoDB"],
+      "プレゼン資料をAIで効率的に作ることができるWebアプリです。対象をエンジニアに絞り、コードブロック、発表の採点機能などを導入しました。プレゼンの質を向上させることを目指しています。",
+    technologies: ["Web", "Next.js", "Go", "PostgreSQL"],
   },
   {
-    title: "MilkyPublisher",
-    desc: "初心者向けロボットプログラミングアプリ",
+    title: "MichikusaMemo",
+    desc: "位置情報と紐付けしたメモ帳アプリ",
     details:
-      "プログラミング初心者でも簡単にロボットを制御できるアプリケーションです。ビジュアルプログラミングインターフェースを採用し、ドラッグ＆ドロップで命令を組み立てることができます。教育現場での利用を想定し、段階的に学習できる構成になっています。",
-    technologies: ["Flutter", "Dart", "ROS", "Python"],
+      "場所にメモを書くことのできるアプリです。旅行やカンファレンスなどで飛び回る人に向けたアプリです。SwiftUIで実装し、リリースしました。DBのクラウド化を目指しています。",
+    technologies: ["IOS", "SwiftUI", "MapKit"],
   },
   {
-    title: "プロジェクト詳細動画",
-    desc: "大学で活動しているPJの紹介動画",
+    title: "スマプロ",
+    desc: "校内のプロジェクト活動",
     details:
-      "大学のプロジェクト活動を紹介する動画シリーズを制作しました。各チームの取り組み、目標、成果を分かりやすく伝えることで、新たなメンバーの獲得や外部との連携強化を目指しています。撮影から編集まで全て担当しました。",
-    technologies: ["Adobe Premiere Pro", "After Effects", "Filmmaking", "Storytelling"],
+      "2年生からリーダーを務めている。大学内のプロジェクト団体です。アプリ開発を中心に、WebやUnityなど幅広く勉強しています。",
+    technologies: ["Web", "IOS", "Android"],
   },
   {
-    title: "LENON",
-    desc: "技育CAMPハッカソンで受賞!",
+    title: "DevTree",
+    desc: "エンジニア志望向けスキルツリーアプリ",
     details:
-      "技育CAMPハッカソンで開発し、受賞したプロジェクトです。音楽を通じて人々をつなげるプラットフォームで、好みの音楽に基づいてマッチングする機能や、共同プレイリスト作成機能などを実装しました。48時間という限られた時間の中で、チームワークを活かして完成させました。",
-    technologies: ["React", "Node.js", "Spotify API", "Socket.io"],
+      "エンジニアが自分に足りてない知識を把握するためのスキルツリーアプリです。2年生になる直前に、新入生たちに向けて開発しました。技育キャンプハッカソンで受賞しました。",
+    technologies: ["Android", "Kotlin", "JetpackCompose", "Room"],
   },
   {
-    title: "おかんに怒られる",
-    desc: "全く新しいアラームアプリの開発",
+    title: "Hackit運営",
+    desc: "校内のハッカソンイベントの運営",
     details:
-      "従来のアラームとは一線を画す、ユニークなアラームアプリです。目覚まし時計として機能するだけでなく、「おかん」キャラクターが様々なセリフで起床を促します。スヌーズを繰り返すと、だんだん怒り度が増していくという面白い仕掛けも実装しています。",
-    technologies: ["Swift", "SwiftUI", "Core Audio", "Local Notifications"],
+      "3つ上の代が校内で開催していたハッカソンイベントを引き継ぎ、運営を行っています。一年生向けの交流イベントです。一年生の参加者が増えるように、企画や広報を行っています。",
+    technologies: ["Notion", "Git", "Web", "Slack"],
   },
 ]
 
@@ -130,7 +130,7 @@ export default function Home() {
       isExpanded: false,
     },
     {
-      year: "2021",
+      year: "2024",
       title: "おかんに怒られる",
       description: "全く新しいアラームアプリの開発",
       details:
@@ -138,9 +138,10 @@ export default function Home() {
       isExpanded: false,
     },
     {
-      year: "2021",
+      year: "2024",
       title: "大学入学",
       description: "金沢工業大学に入学",
+      date:"4月",
       details: "情報工学を専攻し、プログラミングの基礎を学び始める",
       isExpanded: false,
     },
@@ -237,7 +238,7 @@ export default function Home() {
       {/* Projects Section */}
       <section id="projects" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-semibold text-center text-sky-500 mb-8">プロジェクト（押すと詳細が読めます）</h2>
+          <h2 className="text-3xl font-semibold text-center text-sky-500 mb-8">プロジェクト</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {projects.map((project) => (
               <button
@@ -291,7 +292,7 @@ export default function Home() {
       {/* Timeline Section */}
       <section id="timeline" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-semibold text-center text-sky-500 mb-10">輝いていたあの頃</h2>
+          <h2 className="text-3xl font-semibold text-center text-sky-500 mb-10">これまでの活動</h2>
           <div className="max-w-5xl mx-auto">
             <div className="relative">
               {/* Timeline center line */}

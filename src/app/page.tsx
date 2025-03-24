@@ -79,8 +79,7 @@ export default function Home() {
       title: "LogiLink開発開始",
       description: "KITHackthonで受賞",
       date: "3月",
-      details:
-        "2024物流問題の解決を目指し、SNS型プラットフォームを開発しました。それぞれをネイティブで開発中です。",
+      details: "2024物流問題の解決を目指し、SNS型プラットフォームを開発しました。それぞれをネイティブで開発中です。",
       isExpanded: false,
     },
     {
@@ -132,7 +131,7 @@ export default function Home() {
       year: "2024",
       title: "大学入学",
       description: "金沢工業大学に入学",
-      date:"4月",
+      date: "4月",
       details: "情報工学を専攻し、プログラミングの基礎を学び始める",
       isExpanded: false,
     },
@@ -150,11 +149,11 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white">
       {/* Fixed Navigation Header */}
-      <header className="fixed top-0 w-full bg-[#3498db] text-white py-4 z-50 shadow-md">
+      <header className="fixed top-0 w-full bg-[#111827] text-white py-4 z-50 shadow-md">
         <nav className="container mx-auto px-4">
           <ul className="flex justify-end space-x-6 text-lg font-medium">
             {["about", "skills", "projects", "timeline", "reports", "contact"].map((section) => (
-              <li key={section} className="hover:text-yellow-300 transition-colors">
+              <li key={section} className="hover:text-indigo-400 transition-colors">
                 <a href={`#${section}`}>{section.charAt(0).toUpperCase() + section.slice(1)}</a>
               </li>
             ))}
@@ -171,18 +170,18 @@ export default function Home() {
             width={192}
             height={192}
             priority
-            className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-yellow-400 shadow-2xl"
+            className="w-40 h-40 md:w-48 md:h-48 rounded-full object-cover border-4 border-indigo-500 shadow-2xl"
           />
         </div>
 
-        <h1 className="text-sky-500 text-4xl md:text-6xl font-bold drop-shadow-lg mb-6">高岡己太朗</h1>
+        <h1 className="text-indigo-600 text-4xl md:text-6xl font-bold drop-shadow-lg mb-6">高岡己太朗</h1>
       </section>
 
       {/* About Section */}
       <section id="about" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-semibold text-center text-sky-500 mb-8">About me</h2>
-          <p className="text-xl text-center max-w-6xl mx-auto text-black">
+          <h2 className="text-3xl font-semibold text-center text-indigo-600 mb-8">About me</h2>
+          <p className="text-xl text-center max-w-6xl mx-auto text-gray-800">
             金沢工業大学で情報工学を学んでいる&quot;こたろう&quot;と申します
             <br />
             最近はAndroidアプリ開発にハマっていて、技術イベントにもよく出没します。
@@ -198,7 +197,7 @@ export default function Home() {
       {/* Skills Section */}
       <section id="skills" className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-semibold text-center text-sky-500 mb-10">Skills</h2>
+          <h2 className="text-3xl font-semibold text-center text-indigo-600 mb-10">Skills</h2>
           <div className="flex justify-center flex-wrap gap-3 md:gap-4 max-w-4xl mx-auto">
             {[
               "Java",
@@ -217,7 +216,7 @@ export default function Home() {
             ].map((skill) => (
               <div
                 key={skill}
-                className="px-6 py-2 bg-emerald-500 text-white text-lg rounded-full hover:bg-emerald-600 transition shadow-sm"
+                className="px-6 py-2 bg-indigo-500 text-white text-lg rounded-full hover:bg-indigo-700 transition shadow-sm"
               >
                 {skill}
               </div>
@@ -229,19 +228,19 @@ export default function Home() {
       {/* Projects Section */}
       <section id="projects" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-semibold text-center text-sky-500 mb-8">プロジェクト</h2>
+          <h2 className="text-3xl font-semibold text-center text-indigo-600 mb-8">プロジェクト</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {projects.map((project) => (
               <button
                 key={project.title}
                 onClick={() => openProjectDetails(project)}
-                className="h-36 px-6 py-6 bg-white text-sky-500 rounded-lg border-2 border-white shadow-xl 
-                hover:bg-gradient-to-r hover:from-orange-400 hover:via-pink-500 hover:to-purple-500 
-                hover:text-white hover:shadow-lg hover:-translate-y-1 active:scale-95 
-                transition transform flex flex-col items-start"
+                className="h-36 px-6 py-6 bg-white text-indigo-600 rounded-lg border-2 border-white shadow-xl 
+hover:bg-gradient-to-r hover:from-indigo-500 hover:via-indigo-600 hover:to-indigo-800 
+hover:text-white hover:shadow-lg hover:-translate-y-1 active:scale-95 
+transition transform flex flex-col items-start"
               >
                 <span className="text-xl font-bold mb-4">{project.title}</span>
-                <span className="text-base text-black hover:text-white">{project.desc}</span>
+                <span className="text-base text-gray-700 hover:text-white">{project.desc}</span>
               </button>
             ))}
           </div>
@@ -254,7 +253,7 @@ export default function Home() {
           <DialogContent className="sm:max-w-md">
             <DialogHeader>
               <div className="flex items-center justify-between">
-                <DialogTitle className="text-xl font-bold text-sky-500">{selectedProject.title}</DialogTitle>
+                <DialogTitle className="text-xl font-bold text-indigo-600">{selectedProject.title}</DialogTitle>
               </div>
               <DialogDescription className="text-base font-medium text-gray-700 mt-1">
                 {selectedProject.desc}
@@ -269,7 +268,7 @@ export default function Home() {
                 <h3 className="text-sm font-semibold text-gray-500 mb-2">使用技術</h3>
                 <div className="flex flex-wrap gap-2">
                   {selectedProject.technologies.map((tech) => (
-                    <span key={tech} className="px-3 py-1 bg-sky-100 text-sky-700 text-xs rounded-full">
+                    <span key={tech} className="px-3 py-1 bg-indigo-100 text-indigo-700 text-xs rounded-full">
                       {tech}
                     </span>
                   ))}
@@ -283,11 +282,11 @@ export default function Home() {
       {/* Timeline Section */}
       <section id="timeline" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-semibold text-center text-sky-500 mb-10">これまでの活動</h2>
+          <h2 className="text-3xl font-semibold text-center text-indigo-600 mb-10">これまでの活動</h2>
           <div className="max-w-5xl mx-auto">
             <div className="relative">
               {/* Timeline center line */}
-              <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-sky-500 transform -translate-x-1/2"></div>
+              <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-indigo-500 transform -translate-x-1/2"></div>
 
               {/* Timeline events */}
               {events.map((event, index) => {
@@ -296,7 +295,7 @@ export default function Home() {
                 return (
                   <div key={index} className="mb-12 relative flex justify-center items-center">
                     {/* Year marker in center */}
-                    <div className="absolute left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-sky-500 border-4 border-white z-10 flex items-center justify-center text-xs text-white font-bold">
+                    <div className="absolute left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-indigo-500 border-4 border-white z-10 flex items-center justify-center text-xs text-white font-bold">
                       {event.year.slice(-2)}
                     </div>
 
@@ -306,11 +305,11 @@ export default function Home() {
                     >
                       {/* Event content */}
                       <div className="bg-white rounded-lg shadow-md overflow-hidden">
-                        <div className="bg-sky-500 text-white px-6 py-3 flex justify-between items-center">
+                        <div className="bg-indigo-600 text-white px-6 py-3 flex justify-between items-center">
                           <span className="font-medium">{event.year}</span>
                           <button
                             onClick={() => toggleExpand(index)}
-                            className="text-white hover:bg-sky-600 rounded-full p-1"
+                            className="text-white hover:bg-indigo-800 rounded-full p-1"
                             aria-label={event.isExpanded ? "折りたたむ" : "展開する"}
                           >
                             {event.isExpanded ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
@@ -318,23 +317,23 @@ export default function Home() {
                         </div>
 
                         <div className="p-6">
-                          <h3 className="font-bold text-lg mb-2">{event.title}</h3>
-                          <p className="text-sm mb-4">{event.description}</p>
+                          <h3 className="font-bold text-lg mb-2 text-gray-800">{event.title}</h3>
+                          <p className="text-sm mb-4 text-gray-700">{event.description}</p>
 
                           {event.organization && (
-                            <div className="bg-purple-500 text-white text-sm rounded-md shadow-md p-3 text-center mb-3">
+                            <div className="bg-indigo-500 text-white text-sm rounded-md shadow-md p-3 text-center mb-3">
                               {event.organization}
                             </div>
                           )}
 
                           {event.date && (
                             <div className="text-xs">
-                              <span className="text-lime-400">{event.date}</span>
+                              <span className="text-indigo-600 font-medium">{event.date}</span>
                             </div>
                           )}
 
                           {event.isExpanded && event.details && (
-                            <div className="mt-4 text-sm bg-gray-50 p-4 rounded-md border border-gray-100">
+                            <div className="mt-4 text-sm bg-gray-100 p-4 rounded-md border border-gray-200">
                               {event.details}
                             </div>
                           )}
@@ -342,12 +341,12 @@ export default function Home() {
                       </div>
 
                       {/* Mobile timeline dot */}
-                      <div className="absolute top-4 left-0 w-4 h-4 rounded-full bg-sky-500 border-2 border-white md:hidden"></div>
+                      <div className="absolute top-4 left-0 w-4 h-4 rounded-full bg-indigo-500 border-2 border-white md:hidden"></div>
                     </div>
 
                     {/* Connector line to center - only visible on desktop */}
                     <div
-                      className={`hidden md:block absolute top-4 h-0.5 bg-sky-500 w-[calc(25%-4px)] ${
+                      className={`hidden md:block absolute top-4 h-0.5 bg-indigo-600 w-[calc(25%-4px)] ${
                         isEven ? "left-[calc(50%+4px)]" : "right-[calc(50%+4px)]"
                       }`}
                     ></div>
@@ -362,13 +361,13 @@ export default function Home() {
       {/* Reports Section */}
       <section id="reports" className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-semibold text-center text-sky-500 mb-8">レポート</h2>
+          <h2 className="text-3xl font-semibold text-center text-indigo-600 mb-8">レポート</h2>
           <div className="max-w-2xl mx-auto">
             <a
               href="https://store.supercell.com/ja/brawlstars"
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-blue-600 underline py-2 hover:text-blue-800 transition-colors text-sm"
+              className="block text-gray-700 underline py-2 hover:text-indigo-600 transition-colors text-sm"
             >
               ・ブロスタのインストールはこちらから
             </a>
@@ -378,7 +377,7 @@ export default function Home() {
                 href="https://example.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block text-blue-600 underline py-2 hover:text-blue-800 transition-colors text-sm"
+                className="block text-gray-700 underline py-2 hover:text-indigo-600 transition-colors text-sm"
               >
                 ・別のサイトはこちら
               </a>
@@ -390,20 +389,20 @@ export default function Home() {
       {/* Contact Section */}
       <section id="contact" className="py-16">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-semibold text-sky-500 mb-8">Contact</h2>
-          <p className="text-lg mb-6">お問い合わせはこちらから</p>
+          <h2 className="text-3xl font-semibold text-indigo-600 mb-8">Contact</h2>
+          <p className="text-lg mb-6 text-gray-700">お問い合わせはこちらから</p>
           <div className="flex justify-center space-x-6">
             <a
               href="mailto:akokoa1221@gmail.com"
-              className="bg-sky-500 text-white px-6 py-3 rounded-full hover:bg-sky-600 transition shadow-md"
+              className="bg-indigo-600 text-white px-6 py-3 rounded-full hover:bg-indigo-700 transition shadow-md"
             >
               メールを送る
             </a>
             <a
               href="https://x.com/monaka_12"
               target="_blank"
-              rel="noopener noreferrer" 
-              className="bg-yellow-400 text-black px-6 py-3 rounded-full hover:bg-yellow-500 transition shadow-md"
+              rel="noopener noreferrer"
+              className="bg-gray-800 text-white px-6 py-3 rounded-full hover:bg-gray-900 transition shadow-md"
             >
               SNSで繋がる
             </a>
@@ -412,7 +411,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#3498db] text-white py-6">
+      <footer className="bg-[#111827] text-white py-6">
         <div className="container mx-auto px-4 text-center">
           <p>© 2025 高岡己太郎 All Rights Reserved.</p>
         </div>

@@ -364,24 +364,45 @@ transition transform flex flex-col items-start"
           <h2 className="text-3xl font-semibold text-center text-indigo-600 mb-8">レポート</h2>
           <div className="max-w-2xl mx-auto">
             <a
-              href="https://store.supercell.com/ja/brawlstars"
+              href="https://note.com/kota28/n/n664275bb1967"
               target="_blank"
               rel="noopener noreferrer"
               className="block text-gray-700 underline py-2 hover:text-indigo-600 transition-colors text-sm"
             >
-              ・ブロスタのインストールはこちらから
+              ・「アーキテクチャって何？」から始まったインターンの学び
             </a>
-            {[...Array(7)].map((_, i) => (
-              <a
-                key={i}
-                href="https://example.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-gray-700 underline py-2 hover:text-indigo-600 transition-colors text-sm"
-              >
-                ・別のサイトはこちら
-              </a>
-            ))}
+            <a
+              href="https://qiita.com/ko-tarou/items/09130bb977fb9fa798d4"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-gray-700 underline py-2 hover:text-indigo-600 transition-colors text-sm"
+            >
+              ・Kubectl AIの使い方
+            </a>
+            <a
+              href="https://qiita.com/ko-tarou/items/17bc649c20c3d9257712"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-gray-700 underline py-2 hover:text-indigo-600 transition-colors text-sm"
+            >
+              ・後輩のためのFigma入門
+            </a>
+            <a
+              href="https://qiita.com/ko-tarou/items/252b48ce0dc375ab2657"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-gray-700 underline py-2 hover:text-indigo-600 transition-colors text-sm"
+            >
+              ・WebGPUを使ってAI推論を高速化してみた!
+            </a>
+            <a
+              href="https://qiita.com/ko-tarou/items/6e3bba14c7259118cc36"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-gray-700 underline py-2 hover:text-indigo-600 transition-colors text-sm"
+            >
+              ・Wallpaper EngineをPythonで再現？Pygameで作るアニメーション壁紙
+            </a>
           </div>
         </div>
       </section>

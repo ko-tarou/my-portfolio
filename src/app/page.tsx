@@ -189,7 +189,13 @@ export default function Home() {
             コードを書いたり、最新技術を追ったりするのが好きで、つい時間を忘れてしまうタイプです。
             <br />
             猫とゲームが癒し。
-            <span className="block mt-4 mb-6">気軽に話しかけてください！</span>
+            <br />
+            <span className="block mt-4 mb-6">
+              夢は全言語をマスターすることです！！
+              <br />
+              気軽に話しかけてください！
+              </span>
+
           </p>
         </div>
       </section>

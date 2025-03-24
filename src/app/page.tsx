@@ -3,7 +3,7 @@
 import Image from "next/image"
 import { useState } from "react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
-import { ChevronDown, ChevronUp } from "lucide-react"
+import { ChevronDown, ChevronUp, Menu, X } from "lucide-react"
 
 // プロジェクトデータの型定義
 interface Project {
@@ -73,6 +73,7 @@ const projects: Project[] = [
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
   const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false)
   const [events, setEvents] = useState<TimelineEvent[]>([
     {
       year: "2025",
@@ -146,19 +147,63 @@ export default function Home() {
     setEvents(events.map((event, i) => (i === index ? { ...event, isExpanded: !event.isExpanded } : event)))
   }
 
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen)
+  }
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId)
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" })
+      setMobileMenuOpen(false)
+    }
+  }
+
   return (
     <main className="min-h-screen bg-white">
       {/* Fixed Navigation Header */}
       <header className="fixed top-0 w-full bg-[#111827] text-white py-4 z-50 shadow-md">
-        <nav className="container mx-auto px-4">
-          <ul className="flex justify-end space-x-6 text-lg font-medium">
-            {["about", "skills", "projects", "timeline", "reports", "contact"].map((section) => (
-              <li key={section} className="hover:text-indigo-400 transition-colors">
-                <a href={`#${section}`}>{section.charAt(0).toUpperCase() + section.slice(1)}</a>
-              </li>
-            ))}
-          </ul>
+        <nav className="container mx-auto px-4 flex justify-between items-center">
+          {/* Mobile menu button */}
+          <button
+            className="md:hidden text-white focus:outline-none"
+            onClick={toggleMobileMenu}
+            aria-label={mobileMenuOpen ? "メニューを閉じる" : "メニューを開く"}
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+
+          {/* Desktop navigation */}
+          <div className="hidden md:block ml-auto">
+            <ul className="flex justify-end space-x-6 text-lg font-medium">
+              {["about", "skills", "projects", "timeline", "reports", "contact"].map((section) => (
+                <li key={section} className="hover:text-indigo-400 transition-colors">
+                  <button onClick={() => scrollToSection(section)}>
+                    {section.charAt(0).toUpperCase() + section.slice(1)}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
         </nav>
+
+        {/* Mobile menu */}
+        {mobileMenuOpen && (
+          <div className="md:hidden bg-[#111827] border-t border-gray-700 py-4 px-4 animate-fadeIn">
+            <ul className="flex flex-col space-y-4">
+              {["about", "skills", "projects", "timeline", "reports", "contact"].map((section) => (
+                <li key={section} className="hover:text-indigo-400 transition-colors">
+                  <button
+                    onClick={() => scrollToSection(section)}
+                    className="w-full text-left py-2 px-4 hover:bg-gray-800 rounded-md"
+                  >
+                    {section.charAt(0).toUpperCase() + section.slice(1)}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </header>
 
       {/* Hero Section */}
@@ -174,28 +219,27 @@ export default function Home() {
           />
         </div>
 
-        <h1 className="text-indigo-600 text-4xl md:text-6xl font-bold drop-shadow-lg mb-6">高岡己太朗</h1>
+        <h1 className="text-indigo-600 text-4xl md:text-6xl font-bold drop-shadow-lg mb-6 text-center">高岡己太朗</h1>
       </section>
 
       {/* About Section */}
       <section id="about" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-semibold text-center text-indigo-600 mb-8">About me</h2>
-          <p className="text-xl text-center max-w-6xl mx-auto text-gray-800">
+          <p className="text-lg md:text-xl text-center max-w-6xl mx-auto text-gray-800 px-4">
             金沢工業大学で情報工学を学んでいる&quot;こたろう&quot;と申します
-            <br />
+            <br className="hidden sm:block" />
             最近はAndroidアプリ開発にハマっていて、技術イベントにもよく出没します。
-            <br />
+            <br className="hidden sm:block" />
             コードを書いたり、最新技術を追ったりするのが好きで、つい時間を忘れてしまうタイプです。
-            <br />
+            <br className="hidden sm:block" />
             猫とゲームが癒し。
-            <br />
+            <br className="hidden sm:block" />
             <span className="block mt-4 mb-6">
               夢は全言語をマスターすることです！！
-              <br />
+              <br className="hidden sm:block" />
               気軽に話しかけてください！
-              </span>
-
+            </span>
           </p>
         </div>
       </section>
@@ -204,7 +248,7 @@ export default function Home() {
       <section id="skills" className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-semibold text-center text-indigo-600 mb-10">Skills</h2>
-          <div className="flex justify-center flex-wrap gap-3 md:gap-4 max-w-4xl mx-auto">
+          <div className="flex justify-center flex-wrap gap-2 sm:gap-3 md:gap-4 max-w-4xl mx-auto">
             {[
               "Java",
               "Jetpack Compose",
@@ -222,7 +266,7 @@ export default function Home() {
             ].map((skill) => (
               <div
                 key={skill}
-                className="px-6 py-2 bg-indigo-500 text-white text-lg rounded-full hover:bg-indigo-700 transition shadow-sm"
+                className="px-3 sm:px-4 md:px-6 py-2 bg-indigo-500 text-white text-sm md:text-lg rounded-full hover:bg-indigo-700 transition shadow-sm"
               >
                 {skill}
               </div>
@@ -235,18 +279,18 @@ export default function Home() {
       <section id="projects" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-semibold text-center text-indigo-600 mb-8">プロジェクト</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto">
             {projects.map((project) => (
               <button
                 key={project.title}
                 onClick={() => openProjectDetails(project)}
-                className="h-36 px-6 py-6 bg-white text-indigo-600 rounded-lg border-2 border-white shadow-xl 
-hover:bg-gradient-to-r hover:from-indigo-500 hover:via-indigo-600 hover:to-indigo-800 
-hover:text-white hover:shadow-lg hover:-translate-y-1 active:scale-95 
-transition transform flex flex-col items-start"
+                className="h-36 px-4 sm:px-6 py-4 sm:py-6 bg-white text-indigo-600 rounded-lg border-2 border-white shadow-xl 
+                  hover:bg-gradient-to-r hover:from-indigo-500 hover:via-indigo-600 hover:to-indigo-800 
+                  hover:text-white hover:shadow-lg hover:-translate-y-1 active:scale-95 
+                  transition transform flex flex-col items-start"
               >
-                <span className="text-xl font-bold mb-4">{project.title}</span>
-                <span className="text-base text-gray-700 hover:text-white">{project.desc}</span>
+                <span className="text-lg sm:text-xl font-bold mb-2 sm:mb-4">{project.title}</span>
+                <span className="text-sm sm:text-base text-gray-700 hover:text-white">{project.desc}</span>
               </button>
             ))}
           </div>
@@ -256,7 +300,7 @@ transition transform flex flex-col items-start"
       {/* Project Details Dialog */}
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
         {selectedProject && (
-          <DialogContent className="sm:max-w-md">
+          <DialogContent className="sm:max-w-md max-w-[90vw] mx-4">
             <DialogHeader>
               <div className="flex items-center justify-between">
                 <DialogTitle className="text-xl font-bold text-indigo-600">{selectedProject.title}</DialogTitle>
@@ -291,27 +335,29 @@ transition transform flex flex-col items-start"
           <h2 className="text-3xl font-semibold text-center text-indigo-600 mb-10">これまでの活動</h2>
           <div className="max-w-5xl mx-auto">
             <div className="relative">
-              {/* Timeline center line */}
-              <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-indigo-500 transform -translate-x-1/2"></div>
+              {/* Timeline center line - hidden on mobile, visible on md and up */}
+              <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-indigo-500 transform -translate-x-1/2"></div>
 
               {/* Timeline events */}
               {events.map((event, index) => {
                 const isEven = index % 2 === 0
 
                 return (
-                  <div key={index} className="mb-12 relative flex justify-center items-center">
-                    {/* Year marker in center */}
-                    <div className="absolute left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-indigo-500 border-4 border-white z-10 flex items-center justify-center text-xs text-white font-bold">
+                  <div key={index} className="mb-8 md:mb-12 relative flex justify-center items-start">
+                    {/* Year marker in center - only visible on md screens and up */}
+                    <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-8 h-8 rounded-full bg-indigo-500 border-4 border-white z-10 items-center justify-center text-xs text-white font-bold">
                       {event.year.slice(-2)}
                     </div>
 
-                    {/* Content positioning based on even/odd - responsive layout */}
+                    {/* Content positioning - full width on mobile, alternating on desktop */}
                     <div
-                      className={`w-full md:w-5/12 ${isEven ? "md:ml-auto pl-12 md:pl-0 md:pr-8" : "md:mr-auto pl-12 md:pl-8"} relative`}
+                      className={`w-full md:w-5/12 ${
+                        isEven ? "md:ml-auto pl-10 md:pl-0 md:pr-8" : "md:mr-auto pl-10 md:pl-8"
+                      } relative`}
                     >
                       {/* Event content */}
                       <div className="bg-white rounded-lg shadow-md overflow-hidden">
-                        <div className="bg-indigo-600 text-white px-6 py-3 flex justify-between items-center">
+                        <div className="bg-indigo-600 text-white px-4 sm:px-6 py-3 flex justify-between items-center">
                           <span className="font-medium">{event.year}</span>
                           <button
                             onClick={() => toggleExpand(index)}
@@ -322,12 +368,12 @@ transition transform flex flex-col items-start"
                           </button>
                         </div>
 
-                        <div className="p-6">
-                          <h3 className="font-bold text-lg mb-2 text-gray-800">{event.title}</h3>
-                          <p className="text-sm mb-4 text-gray-700">{event.description}</p>
+                        <div className="p-4 sm:p-6">
+                          <h3 className="font-bold text-base sm:text-lg mb-2 text-gray-800">{event.title}</h3>
+                          <p className="text-xs sm:text-sm mb-4 text-gray-700">{event.description}</p>
 
                           {event.organization && (
-                            <div className="bg-indigo-500 text-white text-sm rounded-md shadow-md p-3 text-center mb-3">
+                            <div className="bg-indigo-500 text-white text-xs sm:text-sm rounded-md shadow-md p-2 sm:p-3 text-center mb-3">
                               {event.organization}
                             </div>
                           )}
@@ -339,7 +385,7 @@ transition transform flex flex-col items-start"
                           )}
 
                           {event.isExpanded && event.details && (
-                            <div className="mt-4 text-sm bg-gray-100 p-4 rounded-md border border-gray-200">
+                            <div className="mt-4 text-xs sm:text-sm bg-gray-100 p-3 sm:p-4 rounded-md border border-gray-200">
                               {event.details}
                             </div>
                           )}
@@ -348,6 +394,11 @@ transition transform flex flex-col items-start"
 
                       {/* Mobile timeline dot */}
                       <div className="absolute top-4 left-0 w-4 h-4 rounded-full bg-indigo-500 border-2 border-white md:hidden"></div>
+
+                      {/* Mobile year marker */}
+                      <div className="absolute top-3 left-0 w-6 h-6 flex items-center justify-center md:hidden">
+                        <span className="text-[10px] font-bold text-white">{event.year.slice(-2)}</span>
+                      </div>
                     </div>
 
                     {/* Connector line to center - only visible on desktop */}
@@ -373,7 +424,7 @@ transition transform flex flex-col items-start"
               href="https://note.com/kota28/n/n664275bb1967"
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-gray-700 underline py-2 hover:text-indigo-600 transition-colors text-sm"
+              className="block text-gray-700 underline py-2 hover:text-indigo-600 transition-colors text-xs sm:text-sm"
             >
               ・「アーキテクチャって何？」から始まったインターンの学び
             </a>
@@ -381,7 +432,7 @@ transition transform flex flex-col items-start"
               href="https://qiita.com/ko-tarou/items/09130bb977fb9fa798d4"
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-gray-700 underline py-2 hover:text-indigo-600 transition-colors text-sm"
+              className="block text-gray-700 underline py-2 hover:text-indigo-600 transition-colors text-xs sm:text-sm"
             >
               ・Kubectl AIの使い方
             </a>
@@ -389,7 +440,7 @@ transition transform flex flex-col items-start"
               href="https://qiita.com/ko-tarou/items/17bc649c20c3d9257712"
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-gray-700 underline py-2 hover:text-indigo-600 transition-colors text-sm"
+              className="block text-gray-700 underline py-2 hover:text-indigo-600 transition-colors text-xs sm:text-sm"
             >
               ・後輩のためのFigma入門
             </a>
@@ -397,7 +448,7 @@ transition transform flex flex-col items-start"
               href="https://qiita.com/ko-tarou/items/252b48ce0dc375ab2657"
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-gray-700 underline py-2 hover:text-indigo-600 transition-colors text-sm"
+              className="block text-gray-700 underline py-2 hover:text-indigo-600 transition-colors text-xs sm:text-sm"
             >
               ・WebGPUを使ってAI推論を高速化してみた!
             </a>
@@ -405,7 +456,7 @@ transition transform flex flex-col items-start"
               href="https://qiita.com/ko-tarou/items/6e3bba14c7259118cc36"
               target="_blank"
               rel="noopener noreferrer"
-              className="block text-gray-700 underline py-2 hover:text-indigo-600 transition-colors text-sm"
+              className="block text-gray-700 underline py-2 hover:text-indigo-600 transition-colors text-xs sm:text-sm"
             >
               ・Wallpaper EngineをPythonで再現？Pygameで作るアニメーション壁紙
             </a>
@@ -418,7 +469,7 @@ transition transform flex flex-col items-start"
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-semibold text-indigo-600 mb-8">Contact</h2>
           <p className="text-lg mb-6 text-gray-700">お問い合わせはこちらから</p>
-          <div className="flex justify-center space-x-6">
+          <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
             <a
               href="mailto:akokoa1221@gmail.com"
               className="bg-indigo-600 text-white px-6 py-3 rounded-full hover:bg-indigo-700 transition shadow-md"

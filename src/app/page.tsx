@@ -27,46 +27,46 @@ interface TimelineEvent {
 // Project data with additional details
 const projects: Project[] = [
   {
-    title: "DidLife",
-    desc: "不登校自動を未然に防ぐアプ",
+    title: "LogiLink",
+    desc: "配送業者同士の連携SNSアプリ",
     details:
-      "不登校の兆候を早期に発見し、適切なサポートを提供するためのアプリです。生徒の出席パターン、学校での活動、気分の変化などを分析し、リスクがある場合に教師や保護者に通知します。早期介入により、不登校を未然に防ぐことを目指しています。",
-    technologies: ["Android", "Jetpack Compose", "Firebase", "Machine Learning"],
+      "配送業者同士の連携をスムーズに行うためのアプリです。サプライチェーンの会社全てを繋ぎ、契約や受注などの流れを全て自動化することを目指したプロダクトです。2024年問題を解決することを目指しています。",
+    technologies: ["Android", "IOS", "Web", "AWS"],
   },
   {
-    title: "ShiftTape",
-    desc: "シフト管理アプリ",
+    title: "PresentsAI",
+    desc: "プレゼンシート作成アプリ",
     details:
-      "複雑なシフト管理を簡単にするためのアプリです。従業員のスケジュール調整、シフト交換リクエスト、勤務時間の追跡などの機能を提供します。直感的なインターフェースで、管理者と従業員の両方にとって使いやすいシステムを実現しました。",
-    technologies: ["React Native", "Redux", "Node.js", "MongoDB"],
+      "プレゼン資料をAIで効率的に作ることができるWebアプリです。対象をエンジニアに絞り、コードブロック、発表の採点機能などを導入しました。プレゼンの質を向上させることを目指しています。",
+    technologies: ["Web", "Next.js", "Go", "PostgreSQL"],
   },
   {
-    title: "MilkyPublisher",
-    desc: "初心者向けロボットプログラミングアプリ",
+    title: "MichikusaMemo",
+    desc: "位置情報と紐付けしたメモ帳アプリ",
     details:
-      "プログラミング初心者でも簡単にロボットを制御できるアプリケーションです。ビジュアルプログラミングインターフェースを採用し、ドラッグ＆ドロップで命令を組み立てることができます。教育現場での利用を想定し、段階的に学習できる構成になっています。",
-    technologies: ["Flutter", "Dart", "ROS", "Python"],
+      "場所にメモを書くことのできるアプリです。旅行やカンファレンスなどで飛び回る人に向けたアプリです。SwiftUIで実装し、リリースしました。DBのクラウド化を目指しています。",
+    technologies: ["IOS", "SwiftUI", "MapKit"],
   },
   {
-    title: "プロジェクト詳細動画",
-    desc: "大学で活動しているPJの紹介動画",
+    title: "スマプロ",
+    desc: "校内のプロジェクト活動",
     details:
-      "大学のプロジェクト活動を紹介する動画シリーズを制作しました。各チームの取り組み、目標、成果を分かりやすく伝えることで、新たなメンバーの獲得や外部との連携強化を目指しています。撮影から編集まで全て担当しました。",
-    technologies: ["Adobe Premiere Pro", "After Effects", "Filmmaking", "Storytelling"],
+      "2年生からリーダーを務めている。大学内のプロジェクト団体です。アプリ開発を中心に、WebやUnityなど幅広く勉強しています。",
+    technologies: ["Web", "IOS", "Android"],
   },
   {
-    title: "LENON",
-    desc: "技育CAMPハッカソンで受賞!",
+    title: "DevTree",
+    desc: "エンジニア志望向けスキルツリーアプリ",
     details:
-      "技育CAMPハッカソンで開発し、受賞したプロジェクトです。音楽を通じて人々をつなげるプラットフォームで、好みの音楽に基づいてマッチングする機能や、共同プレイリスト作成機能などを実装しました。48時間という限られた時間の中で、チームワークを活かして完成させました。",
-    technologies: ["React", "Node.js", "Spotify API", "Socket.io"],
+      "エンジニアが自分に足りてない知識を把握するためのスキルツリーアプリです。2年生になる直前に、新入生たちに向けて開発しました。",
+    technologies: ["Android", "Kotlin", "JetpackCompose", "Room"],
   },
   {
-    title: "おかんに怒られる",
-    desc: "全く新しいアラームアプリの開発",
+    title: "Hackit運営",
+    desc: "校内のハッカソンイベントの運営",
     details:
-      "従来のアラームとは一線を画す、ユニークなアラームアプリです。目覚まし時計として機能するだけでなく、「おかん」キャラクターが様々なセリフで起床を促します。スヌーズを繰り返すと、だんだん怒り度が増していくという面白い仕掛けも実装しています。",
-    technologies: ["Swift", "SwiftUI", "Core Audio", "Local Notifications"],
+      "3つ上の代が校内で開催していたハッカソンイベントを引き継ぎ、運営を行っています。一年生向けの交流イベントです。一年生の参加者が増えるように、企画や広報を行っています。",
+    technologies: ["Notion", "Git", "Web", "Slack"],
   },
 ]
 
@@ -76,71 +76,63 @@ export default function Home() {
   const [events, setEvents] = useState<TimelineEvent[]>([
     {
       year: "2025",
-      title: "インターンシップ",
-      description: "ATMとAndroidの接続関連の開発およびテストを行う",
-      organization: "日立チャネルソリューションズ株式会社",
-      date: "1月末",
-      details: "僕のいた部署は環境が最高でした。やる気に満ち溢れていました。",
-      isExpanded: false,
-    },
-    {
-      year: "2024",
-      title: "プロジェクトリーダー就任",
-      description: "大学のRoboCup@Homeプロジェクト",
-      organization: "チームのやる気を向上させる目標を掲げる",
-      isExpanded: false,
-    },
-    {
-      year: "2024",
-      title: "RCJ2024",
-      description: "TidyUpという競技を担当。物体認識から物体把持を行う。挙手判定や手渡しを書く。MilkyPublisherの開発",
-      organization: "死に物狂いでTidyUpを開発",
-      isExpanded: false,
-    },
-    {
-      year: "2023",
-      title: "MilkyPublisher開発",
-      description: "初心者向けロボットプログラミングアプリの開発",
+      title: "LogiLink開発開始",
+      description: "KITHackthonで受賞",
+      date: "3月",
       details:
-        "プログラミング初心者でも簡単にロボットを制御できるアプリケーションです。ビジュアルプログラミングインターフェースを採用し、ドラッグ＆ドロップで命令を組み立てることができます。",
+        "2024物流問題の解決を目指し、SNS型プラットフォームを開発しました。それぞれをネイティブで開発中です。",
       isExpanded: false,
     },
     {
-      year: "2023",
-      title: "技育CAMPハッカソン受賞",
-      description: "LENONプロジェクトで受賞",
-      details:
-        "音楽を通じて人々をつなげるプラットフォームで、好みの音楽に基づいてマッチングする機能や、共同プレイリスト作成機能などを実装しました。48時間という限られた時間の中で、チームワークを活かして完成させました。",
-      isExpanded: false,
-    },
-    {
-      year: "2022",
-      title: "DidLife開発開始",
+      year: "2025",
+      title: "MichikusaMemoリリース",
       description: "不登校自動を未然に防ぐアプリ開発",
+      date: "3月",
       details:
-        "不登校の兆候を早期に発見し、適切なサポートを提供するためのアプリです。生徒の出席パターン、学校での活動、気分の変化などを分析し、リスクがある場合に教師や保護者に通知します。",
+        "位置情報と紐付けて、メモを管理することができるアプリです。SwiftUIで実装し、リリースしました。DBのクラウド化を目指しています。",
       isExpanded: false,
     },
     {
-      year: "2022",
-      title: "ShiftTape開発",
-      description: "シフト管理アプリの開発",
-      details:
-        "複雑なシフト管理を簡単にするためのアプリです。従業員のスケジュール調整、シフト交換リクエスト、勤務時間の追跡などの機能を提供します。",
+      year: "2025",
+      title: "インターンシップ",
+      description: "KotlinでAIチャットボットアプリを開発",
+      organization: "株式会社CyberAgent",
+      date: "2月",
+      details: "MVVMやCI/CDなどの技術を学びました。良いメンターさんに巡り会え、とても良い経験になりました。",
       isExpanded: false,
     },
     {
-      year: "2021",
-      title: "おかんに怒られる",
-      description: "全く新しいアラームアプリの開発",
-      details:
-        "従来のアラームとは一線を画す、ユニークなアラームアプリです。目覚まし時計として機能するだけでなく、「おかん」キャラクターが様々なセリフで起床を促します。スヌーズを繰り返すと、だんだん怒り度が増していくという面白い仕掛けも実装しています。",
+      year: "2025",
+      title: "インターンシップ",
+      description: "Swiftのチュートリアル",
+      organization: "BetaComputing株式会社",
+      date: "1月",
+      details: "Swiftの基礎を学び、実務のお話を聞くことができました。",
       isExpanded: false,
     },
     {
-      year: "2021",
+      year: "2024",
+      title: "PresentAI開発",
+      description: "プレゼン資料作成アプリ",
+      date: "12月",
+      details:
+        "プレゼン資料を作成する際に、AIが自動でサポートしてくれるアプリです。これを通し、Web開発の基礎を学びました。",
+      isExpanded: false,
+    },
+    {
+      year: "2024",
+      title: "スマプロ参加",
+      description: "校内のプロジェクト活動に参加",
+      date: "4月",
+      details:
+        "ここで初めてアプリ開発に触れ、Androidアプリの開発を学びました。チームでの開発やコードレビューなど、エンジニアとしての基礎を学びました。",
+      isExpanded: false,
+    },
+    {
+      year: "2024",
       title: "大学入学",
       description: "金沢工業大学に入学",
+      date:"4月",
       details: "情報工学を専攻し、プログラミングの基礎を学び始める",
       isExpanded: false,
     },
@@ -237,7 +229,7 @@ export default function Home() {
       {/* Projects Section */}
       <section id="projects" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-semibold text-center text-sky-500 mb-8">プロジェクト（押すと詳細が読めます）</h2>
+          <h2 className="text-3xl font-semibold text-center text-sky-500 mb-8">プロジェクト</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {projects.map((project) => (
               <button
@@ -291,7 +283,7 @@ export default function Home() {
       {/* Timeline Section */}
       <section id="timeline" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-semibold text-center text-sky-500 mb-10">輝いていたあの頃</h2>
+          <h2 className="text-3xl font-semibold text-center text-sky-500 mb-10">これまでの活動</h2>
           <div className="max-w-5xl mx-auto">
             <div className="relative">
               {/* Timeline center line */}
@@ -402,13 +394,15 @@ export default function Home() {
           <p className="text-lg mb-6">お問い合わせはこちらから</p>
           <div className="flex justify-center space-x-6">
             <a
-              href="mailto:example@email.com"
+              href="mailto:akokoa1221@gmail.com"
               className="bg-sky-500 text-white px-6 py-3 rounded-full hover:bg-sky-600 transition shadow-md"
             >
               メールを送る
             </a>
             <a
-              href="#"
+              href="https://x.com/monaka_12"
+              target="_blank"
+              rel="noopener noreferrer" 
               className="bg-yellow-400 text-black px-6 py-3 rounded-full hover:bg-yellow-500 transition shadow-md"
             >
               SNSで繋がる

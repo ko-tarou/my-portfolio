@@ -58,7 +58,7 @@ const projects: Project[] = [
     title: "DevTree",
     desc: "エンジニア志望向けスキルツリーアプリ",
     details:
-      "エンジニアが自分に足りてない知識を把握するためのスキルツリーアプリです。2年生になる直前に、新入生たちに向けて開発しました。技育キャンプハッカソンで受賞しました。",
+      "エンジニアが自分に足りてない知識を把握するためのスキルツリーアプリです。2年生になる直前に、新入生たちに向けて開発しました。",
     technologies: ["Android", "Kotlin", "JetpackCompose", "Room"],
   },
   {
@@ -76,65 +76,56 @@ export default function Home() {
   const [events, setEvents] = useState<TimelineEvent[]>([
     {
       year: "2025",
-      title: "インターンシップ",
-      description: "ATMとAndroidの接続関連の開発およびテストを行う",
-      organization: "日立チャネルソリューションズ株式会社",
-      date: "1月末",
-      details: "僕のいた部署は環境が最高でした。やる気に満ち溢れていました。",
-      isExpanded: false,
-    },
-    {
-      year: "2024",
-      title: "プロジェクトリーダー就任",
-      description: "大学のRoboCup@Homeプロジェクト",
-      organization: "チームのやる気を向上させる目標を掲げる",
-      isExpanded: false,
-    },
-    {
-      year: "2024",
-      title: "RCJ2024",
-      description: "TidyUpという競技を担当。物体認識から物体把持を行う。挙手判定や手渡しを書く。MilkyPublisherの開発",
-      organization: "死に物狂いでTidyUpを開発",
-      isExpanded: false,
-    },
-    {
-      year: "2023",
-      title: "MilkyPublisher開発",
-      description: "初心者向けロボットプログラミングアプリの開発",
+      title: "LogiLink開発開始",
+      description: "KITHackthonで受賞",
+      date: "3月",
       details:
-        "プログラミング初心者でも簡単にロボットを制御できるアプリケーションです。ビジュアルプログラミングインターフェースを採用し、ドラッグ＆ドロップで命令を組み立てることができます。",
+        "2024物流問題の解決を目指し、SNS型プラットフォームを開発しました。それぞれをネイティブで開発中です。",
       isExpanded: false,
     },
     {
-      year: "2023",
-      title: "技育CAMPハッカソン受賞",
-      description: "LENONプロジェクトで受賞",
-      details:
-        "音楽を通じて人々をつなげるプラットフォームで、好みの音楽に基づいてマッチングする機能や、共同プレイリスト作成機能などを実装しました。48時間という限られた時間の中で、チームワークを活かして完成させました。",
-      isExpanded: false,
-    },
-    {
-      year: "2022",
-      title: "DidLife開発開始",
+      year: "2025",
+      title: "MichikusaMemoリリース",
       description: "不登校自動を未然に防ぐアプリ開発",
+      date: "3月",
       details:
-        "不登校の兆候を早期に発見し、適切なサポートを提供するためのアプリです。生徒の出席パターン、学校での活動、気分の変化などを分析し、リスクがある場合に教師や保護者に通知します。",
+        "位置情報と紐付けて、メモを管理することができるアプリです。SwiftUIで実装し、リリースしました。DBのクラウド化を目指しています。",
       isExpanded: false,
     },
     {
-      year: "2022",
-      title: "ShiftTape開発",
-      description: "シフト管理アプリの開発",
-      details:
-        "複雑なシフト管理を簡単にするためのアプリです。従業員のスケジュール調整、シフト交換リクエスト、勤務時間の追跡などの機能を提供します。",
+      year: "2025",
+      title: "インターンシップ",
+      description: "KotlinでAIチャットボットアプリを開発",
+      organization: "株式会社CyberAgent",
+      date: "2月",
+      details: "MVVMやCI/CDなどの技術を学びました。良いメンターさんに巡り会え、とても良い経験になりました。",
+      isExpanded: false,
+    },
+    {
+      year: "2025",
+      title: "インターンシップ",
+      description: "Swiftのチュートリアル",
+      organization: "BetaComputing株式会社",
+      date: "1月",
+      details: "Swiftの基礎を学び、実務のお話を聞くことができました。",
       isExpanded: false,
     },
     {
       year: "2024",
-      title: "おかんに怒られる",
-      description: "全く新しいアラームアプリの開発",
+      title: "PresentAI開発",
+      description: "プレゼン資料作成アプリ",
+      date: "12月",
       details:
-        "従来のアラームとは一線を画す、ユニークなアラームアプリです。目覚まし時計として機能するだけでなく、「おかん」キャラクターが様々なセリフで起床を促します。スヌーズを繰り返すと、だんだん怒り度が増していくという面白い仕掛けも実装しています。",
+        "プレゼン資料を作成する際に、AIが自動でサポートしてくれるアプリです。これを通し、Web開発の基礎を学びました。",
+      isExpanded: false,
+    },
+    {
+      year: "2024",
+      title: "スマプロ参加",
+      description: "校内のプロジェクト活動に参加",
+      date: "4月",
+      details:
+        "ここで初めてアプリ開発に触れ、Androidアプリの開発を学びました。チームでの開発やコードレビューなど、エンジニアとしての基礎を学びました。",
       isExpanded: false,
     },
     {
@@ -403,13 +394,15 @@ export default function Home() {
           <p className="text-lg mb-6">お問い合わせはこちらから</p>
           <div className="flex justify-center space-x-6">
             <a
-              href="mailto:example@email.com"
+              href="mailto:akokoa1221@gmail.com"
               className="bg-sky-500 text-white px-6 py-3 rounded-full hover:bg-sky-600 transition shadow-md"
             >
               メールを送る
             </a>
             <a
-              href="#"
+              href="https://x.com/monaka_12"
+              target="_blank"
+              rel="noopener noreferrer" 
               className="bg-yellow-400 text-black px-6 py-3 rounded-full hover:bg-yellow-500 transition shadow-md"
             >
               SNSで繋がる

@@ -444,6 +444,7 @@ export default function Home() {
             >
               ・後輩のためのFigma入門
             </a>
+            
             <a
               href="https://qiita.com/ko-tarou/items/252b48ce0dc375ab2657"
               target="_blank"
@@ -459,6 +460,14 @@ export default function Home() {
               className="block text-gray-700 underline py-2 hover:text-indigo-600 transition-colors text-xs sm:text-sm"
             >
               ・Wallpaper EngineをPythonで再現？Pygameで作るアニメーション壁紙
+            </a>
+            <a
+              href="https://qiita.com/ko-tarou/items/c0190b34b1ddc12aada7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-gray-700 underline py-2 hover:text-indigo-600 transition-colors text-xs sm:text-sm"
+            >
+              ・Qwenをローカルで使ってみた。
             </a>
           </div>
         </div>

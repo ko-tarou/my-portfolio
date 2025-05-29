@@ -77,6 +77,22 @@ export default function Home() {
   const [events, setEvents] = useState<TimelineEvent[]>([
     {
       year: "2025",
+      title: "長期インターンシップ",
+      description: "Goでの大規模開発に挑戦",
+      date: "4月",
+      details: "ENECHANGEの長期インターンシップに参加し、GoやTypeScriptを使った大規模開発に取り組んでいます。",
+      isExpanded: false,
+    },
+    {
+      year: "2025",
+      title: "長期インターンシップ",
+      description: "Goでの大規模開発に挑戦",
+      date: "4月",
+      details: "ENECHANGEの長期インターンシップに参加し、GoやTypeScriptを使った大規模開発に取り組んでいます。",
+      isExpanded: false,
+    },
+    {
+      year: "2025",
       title: "LogiLink開発開始",
       description: "KITHackthonで受賞",
       date: "3月",
@@ -250,19 +266,19 @@ export default function Home() {
           <h2 className="text-3xl font-semibold text-center text-indigo-600 mb-10">Skills</h2>
           <div className="flex justify-center flex-wrap gap-2 sm:gap-3 md:gap-4 max-w-4xl mx-auto">
             {[
-              "Java",
               "Jetpack Compose",
               "SwiftUI",
               "C",
               "Python",
               "Flutter",
               "React",
+              "TypeScript",
               "Next.js",
               "Go",
               "Kubernetes",
+              "Docker",
               "LLM",
               "Ruby",
-              "Unity",
             ].map((skill) => (
               <div
                 key={skill}

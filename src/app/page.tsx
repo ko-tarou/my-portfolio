@@ -27,6 +27,13 @@ interface TimelineEvent {
 // Project data with additional details
 const projects: Project[] = [
   {
+    title: "Hackit運営",
+    desc: "校内のハッカソンイベントの運営",
+    details:
+      "校内で開催するハッカソン運営の主催を行っています。一年生の参加者が増えるように、企画や広報を行っています。スポンサー大募集中です",
+    technologies: ["Notion", "Git", "Web", "Slack"],
+  },
+  {
     title: "LogiLink",
     desc: "配送業者同士の連携SNSアプリ",
     details:
@@ -34,11 +41,11 @@ const projects: Project[] = [
     technologies: ["Android", "IOS", "Web", "AWS"],
   },
   {
-    title: "PresentsAI",
-    desc: "プレゼンシート作成アプリ",
+    title: "DeadLine Widget",
+    desc: "締め切り管理アプリ",
     details:
-      "プレゼン資料をAIで効率的に作ることができるWebアプリです。対象をエンジニアに絞り、コードブロック、発表の採点機能などを導入しました。プレゼンの質を向上させることを目指しています。",
-    technologies: ["Web", "Next.js", "Go", "PostgreSQL"],
+      "widgetを利用し、締め切りを管理するアプリです。ハッカソンの作品として開発し、リリースしました。締め切りを可視化することで、タスク管理を効率化します。",
+    technologies: ["Swift", "SwiftData", "Widget", "SwiftUI"],
   },
   {
     title: "MichikusaMemo",
@@ -61,13 +68,6 @@ const projects: Project[] = [
       "エンジニアが自分に足りてない知識を把握するためのスキルツリーアプリです。2年生になる直前に、新入生たちに向けて開発しました。",
     technologies: ["Android", "Kotlin", "JetpackCompose", "Room"],
   },
-  {
-    title: "Hackit運営",
-    desc: "校内のハッカソンイベントの運営",
-    details:
-      "3つ上の代が校内で開催していたハッカソンイベントを引き継ぎ、運営を行っています。一年生向けの交流イベントです。一年生の参加者が増えるように、企画や広報を行っています。",
-    technologies: ["Notion", "Git", "Web", "Slack"],
-  },
 ]
 
 export default function Home() {
@@ -77,16 +77,26 @@ export default function Home() {
   const [events, setEvents] = useState<TimelineEvent[]>([
     {
       year: "2025",
-      title: "長期インターンシップ",
-      description: "Goでの大規模開発に挑戦",
-      date: "4月",
-      details: "ENECHANGEの長期インターンシップに参加し、GoやTypeScriptを使った大規模開発に取り組んでいます。",
+      title: "DeadLine Widgetリリース",
+      description: "ハッカソンの作品をリリース",
+      date: "6月",
+      details: "技育キャンプハッカソンに参加し、DeadLine Widgetをリリースしました。これは、締め切りを管理するためのウィジェットです。",
+      isExpanded: false,
+    },
+    {
+      year: "2025",
+      title: "バックエンド設計のインターンシップ",
+      description: "DBやAPI設計を学ぶインターンシップに参加。ER図や実践的な設計手法を学びました。",
+      organization: "株式会社ゆめみ",
+      date: "5月",
+      details: "",
       isExpanded: false,
     },
     {
       year: "2025",
       title: "長期インターンシップ",
       description: "Goでの大規模開発に挑戦",
+      organization: "株式会社ENECHANGE",
       date: "4月",
       details: "ENECHANGEの長期インターンシップに参加し、GoやTypeScriptを使った大規模開発に取り組んでいます。",
       isExpanded: false,
@@ -102,7 +112,7 @@ export default function Home() {
     {
       year: "2025",
       title: "MichikusaMemoリリース",
-      description: "不登校自動を未然に防ぐアプリ開発",
+      description: "IOSアプリ初リリース",
       date: "3月",
       details:
         "位置情報と紐付けて、メモを管理することができるアプリです。SwiftUIで実装し、リリースしました。DBのクラウド化を目指しています。",
@@ -436,6 +446,14 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-semibold text-center text-indigo-600 mb-8">レポート</h2>
           <div className="max-w-2xl mx-auto">
+            <a
+              href="https://note.com/kota28/n/nadc6d01eeb3a"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-gray-700 underline py-2 hover:text-indigo-600 transition-colors text-xs sm:text-sm"
+            >
+              ・モチベ爆上がりの TSKaigi
+            </a>
             <a
               href="https://note.com/kota28/n/n664275bb1967"
               target="_blank"

@@ -77,6 +77,23 @@ export default function Home() {
   const [events, setEvents] = useState<TimelineEvent[]>([
     {
       year: "2025",
+      title: "インターンシップ",
+      description: "就業型インターン 1 ヶ月間",
+      organization: "合同会社DMM.com",
+      date: "8月",
+      details: "コンポーネント設計から、テスト、バグ修正まで幅広く学びました。とても勉強になりました。",
+      isExpanded: false,
+    },
+    {
+      year: "2025",
+      title: "Hackit",
+      description: "校内ハッカソン運営",
+      date: "8月",
+      details: "校内 13 サークルが所属する DevelopHub にて、3 日間開催のハッカソンを主催しました。",
+      isExpanded: false,
+    },
+    {
+      year: "2025",
       title: "DeadLine Widgetリリース",
       description: "ハッカソンの作品をリリース",
       date: "6月",
@@ -285,6 +302,7 @@ export default function Home() {
               "TypeScript",
               "Next.js",
               "Go",
+              "Figma",
               "Kubernetes",
               "Docker",
               "LLM",

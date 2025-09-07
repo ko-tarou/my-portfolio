@@ -521,6 +521,22 @@ export default function Home() {
             >
               ・Qwenをローカルで使ってみた。
             </a>
+            <a
+              href="https://qiita.com/ko-tarou/items/475720dd3beba4f47547"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-gray-700 underline py-2 hover:text-indigo-600 transition-colors text-xs sm:text-sm"
+            >
+              ・Gradleファイルを理解しよう
+            </a>
+            <a
+              href="https://qiita.com/ko-tarou/items/4a8992b535a897ecaf14"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-gray-700 underline py-2 hover:text-indigo-600 transition-colors text-xs sm:text-sm"
+            >
+              ・Android の Navigation について
+            </a>
           </div>
         </div>
       </section>

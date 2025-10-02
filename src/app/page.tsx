@@ -103,10 +103,10 @@ export default function Home() {
     {
       year: "2025",
       title: "バックエンド設計のインターンシップ",
-      description: "DBやAPI設計を学ぶインターンシップに参加。ER図や実践的な設計手法を学びました。",
+      description: "DB , API 設計に挑戦",
       organization: "株式会社ゆめみ",
       date: "5月",
-      details: "",
+      details: "DBやAPI設計を学ぶインターンシップに参加。ER図や実践的な設計手法を学びました。",
       isExpanded: false,
     },
     {
@@ -536,6 +536,14 @@ export default function Home() {
               className="block text-gray-700 underline py-2 hover:text-indigo-600 transition-colors text-xs sm:text-sm"
             >
               ・Android の Navigation について
+            </a>
+            <a
+              href="https://tech.enechange.co.jp/entry/2025/06/17/182552"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block text-gray-700 underline py-2 hover:text-indigo-600 transition-colors text-xs sm:text-sm"
+            >
+              ・ENECHANGE で磨いたバックエンドスキルと温かいチーム文化
             </a>
           </div>
         </div>

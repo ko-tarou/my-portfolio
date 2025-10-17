@@ -195,33 +195,44 @@ export default function Home() {
           
           {/* Tab Navigation */}
           <div className="flex justify-center mb-8">
-            <div className="bg-white rounded-lg p-1 shadow-md">
+            <div className="bg-white rounded-lg p-1 shadow-md relative">
+              {/* Animated background indicator */}
+              <div
+                className={`absolute top-1 bottom-1 bg-indigo-600 rounded-md transition-all duration-300 ease-in-out ${
+                  activeTab === 'activities' 
+                    ? 'left-1 w-[calc(33.333%-0.25rem)]' 
+                    : activeTab === 'hackathons'
+                    ? 'left-[calc(33.333%+0.25rem)] w-[calc(33.333%-0.5rem)]'
+                    : 'left-[calc(66.666%+0.25rem)] w-[calc(33.333%-0.25rem)]'
+                }`}
+              />
+              
               <button
                 onClick={() => handleTabChange('activities')}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={`relative z-10 px-6 py-3 rounded-md text-base font-medium transition-colors duration-300 ${
                   activeTab === 'activities'
-                    ? 'bg-indigo-600 text-white'
-                    : 'text-gray-600 hover:text-indigo-600 hover:bg-gray-100'
+                    ? 'text-white'
+                    : 'text-gray-600 hover:text-indigo-600'
                 }`}
               >
                 これまでの活動
               </button>
               <button
                 onClick={() => handleTabChange('hackathons')}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={`relative z-10 px-6 py-3 rounded-md text-base font-medium transition-colors duration-300 ${
                   activeTab === 'hackathons'
-                    ? 'bg-indigo-600 text-white'
-                    : 'text-gray-600 hover:text-indigo-600 hover:bg-gray-100'
+                    ? 'text-white'
+                    : 'text-gray-600 hover:text-indigo-600'
                 }`}
               >
                 ハッカソン
               </button>
               <button
                 onClick={() => handleTabChange('conferences')}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                className={`relative z-10 px-6 py-3 rounded-md text-base font-medium transition-colors duration-300 ${
                   activeTab === 'conferences'
-                    ? 'bg-indigo-600 text-white'
-                    : 'text-gray-600 hover:text-indigo-600 hover:bg-gray-100'
+                    ? 'text-white'
+                    : 'text-gray-600 hover:text-indigo-600'
                 }`}
               >
                 カンファレンス

@@ -9,8 +9,11 @@ export interface TimelineEvent {
   isExpanded?: boolean
 }
 
-// タイムラインイベントデータ
-export const timelineEvents: TimelineEvent[] = [
+// タブの型定義
+export type TimelineTab = 'activities' | 'hackathons' | 'conferences'
+
+// これまでの活動データ
+export const activitiesEvents: TimelineEvent[] = [
   {
     year: "2025",
     title: "インターンシップ",
@@ -116,3 +119,82 @@ export const timelineEvents: TimelineEvent[] = [
     isExpanded: false,
   },
 ]
+
+// ハッカソンデータ
+export const hackathonEvents: TimelineEvent[] = [
+  {
+    year: "2025",
+    title: "Hackit",
+    description: "校内ハッカソン運営",
+    date: "8月",
+    details: "校内 13 サークルが所属する DevelopHub にて、3 日間開催のハッカソンを主催しました。",
+    isExpanded: false,
+  },
+  {
+    year: "2025",
+    title: "DeadLine Widgetリリース",
+    description: "技育キャンプハッカソン参加",
+    date: "6月",
+    details: "技育キャンプハッカソンに参加し、DeadLine Widgetをリリースしました。これは、締め切りを管理するためのウィジェットです。",
+    isExpanded: false,
+  },
+  {
+    year: "2025",
+    title: "LogiLink開発開始",
+    description: "KITHackthonで受賞",
+    date: "3月",
+    details: "2024物流問題の解決を目指し、SNS型プラットフォームを開発しました。それぞれをネイティブで開発中です。",
+    isExpanded: false,
+  },
+  {
+    year: "2024",
+    title: "PresentAI開発",
+    description: "プレゼン資料作成アプリ",
+    date: "12月",
+    details: "プレゼン資料を作成する際に、AIが自動でサポートしてくれるアプリです。これを通し、Web開発の基礎を学びました。",
+    isExpanded: false,
+  },
+]
+
+// カンファレンスデータ
+export const conferenceEvents: TimelineEvent[] = [
+  {
+    year: "2025",
+    title: "TSKaigi",
+    description: "TypeScriptカンファレンス参加",
+    date: "9月",
+    details: "TypeScriptの最新動向を学び、多くのエンジニアと交流できました。モチベーションが爆上がりしました！",
+    isExpanded: false,
+  },
+  {
+    year: "2025",
+    title: "Android Bazaar",
+    description: "Android開発者カンファレンス",
+    date: "7月",
+    details: "Android開発の最新トレンドを学び、Jetpack Composeの実践的な使い方を習得しました。",
+    isExpanded: false,
+  },
+  {
+    year: "2024",
+    title: "iOSDC",
+    description: "iOS開発者カンファレンス",
+    date: "11月",
+    details: "SwiftUIの最新機能について学び、iOS開発のスキルを向上させました。",
+    isExpanded: false,
+  },
+  {
+    year: "2024",
+    title: "Webフロントエンド勉強会",
+    description: "フロントエンド技術勉強会",
+    date: "10月",
+    details: "ReactやNext.jsの最新動向について学び、Web開発の知識を深めました。",
+    isExpanded: false,
+  },
+]
+
+// タブごとのデータマッピング
+export const timelineData = {
+  activities: activitiesEvents,
+  hackathons: hackathonEvents,
+  conferences: conferenceEvents,
+}

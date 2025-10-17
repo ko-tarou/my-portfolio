@@ -5,7 +5,7 @@ import { useState } from "react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 import { ChevronDown, ChevronUp, Menu, X } from "lucide-react"
 import { projects, type Project } from "@/resources/projects"
-import { timelineEvents, type TimelineEvent } from "@/resources/timeline"
+import { timelineData, type TimelineEvent, type TimelineTab } from "@/resources/timeline"
 import { skills } from "@/resources/skills"
 import { reports } from "@/resources/reports"
 import { content } from "@/resources/content"
@@ -15,7 +15,8 @@ export default function Home() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
   const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false)
-  const [events, setEvents] = useState<TimelineEvent[]>(timelineEvents)
+  const [activeTab, setActiveTab] = useState<TimelineTab>('activities')
+  const [events, setEvents] = useState<TimelineEvent[]>(timelineData[activeTab])
 
   const openProjectDetails = (project: Project) => {
     setSelectedProject(project)
@@ -24,6 +25,11 @@ export default function Home() {
 
   const toggleExpand = (index: number) => {
     setEvents(events.map((event, i) => (i === index ? { ...event, isExpanded: !event.isExpanded } : event)))
+  }
+
+  const handleTabChange = (tab: TimelineTab) => {
+    setActiveTab(tab)
+    setEvents(timelineData[tab])
   }
 
   const toggleMobileMenu = () => {
@@ -186,6 +192,42 @@ export default function Home() {
       <section id="timeline" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-semibold text-center text-indigo-600 mb-10">{content.timeline.title}</h2>
+          
+          {/* Tab Navigation */}
+          <div className="flex justify-center mb-8">
+            <div className="bg-white rounded-lg p-1 shadow-md">
+              <button
+                onClick={() => handleTabChange('activities')}
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                  activeTab === 'activities'
+                    ? 'bg-indigo-600 text-white'
+                    : 'text-gray-600 hover:text-indigo-600 hover:bg-gray-100'
+                }`}
+              >
+                これまでの活動
+              </button>
+              <button
+                onClick={() => handleTabChange('hackathons')}
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                  activeTab === 'hackathons'
+                    ? 'bg-indigo-600 text-white'
+                    : 'text-gray-600 hover:text-indigo-600 hover:bg-gray-100'
+                }`}
+              >
+                ハッカソン
+              </button>
+              <button
+                onClick={() => handleTabChange('conferences')}
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+                  activeTab === 'conferences'
+                    ? 'bg-indigo-600 text-white'
+                    : 'text-gray-600 hover:text-indigo-600 hover:bg-gray-100'
+                }`}
+              >
+                カンファレンス
+              </button>
+            </div>
+          </div>
           <div className="max-w-5xl mx-auto">
             <div className="relative">
               {/* Timeline center line - hidden on mobile, visible on md and up */}

@@ -4,182 +4,18 @@ import Image from "next/image"
 import { useState } from "react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 import { ChevronDown, ChevronUp, Menu, X } from "lucide-react"
+import { projects, type Project } from "@/resources/projects"
+import { timelineEvents, type TimelineEvent } from "@/resources/timeline"
+import { skills } from "@/resources/skills"
+import { reports } from "@/resources/reports"
+import { content } from "@/resources/content"
 
-// プロジェクトデータの型定義
-interface Project {
-  title: string
-  desc: string
-  details: string
-  technologies: string[]
-}
-
-// タイムラインイベントの型定義
-interface TimelineEvent {
-  year: string
-  title: string
-  description: string
-  organization?: string
-  date?: string
-  details?: string
-  isExpanded?: boolean
-}
-
-// Project data with additional details
-const projects: Project[] = [
-  {
-    title: "Hackit運営",
-    desc: "校内のハッカソンイベントの運営",
-    details:
-      "校内で開催するハッカソン運営の主催を行っています。一年生の参加者が増えるように、企画や広報を行っています。スポンサー大募集中です",
-    technologies: ["Notion", "Git", "Web", "Slack"],
-  },
-  {
-    title: "LogiLink",
-    desc: "配送業者同士の連携SNSアプリ",
-    details:
-      "配送業者同士の連携をスムーズに行うためのアプリです。サプライチェーンの会社全てを繋ぎ、契約や受注などの流れを全て自動化することを目指したプロダクトです。2024年問題を解決することを目指しています。",
-    technologies: ["Android", "IOS", "Web", "AWS"],
-  },
-  {
-    title: "DeadLine Widget",
-    desc: "締め切り管理アプリ",
-    details:
-      "widgetを利用し、締め切りを管理するアプリです。ハッカソンの作品として開発し、リリースしました。締め切りを可視化することで、タスク管理を効率化します。",
-    technologies: ["Swift", "SwiftData", "Widget", "SwiftUI"],
-  },
-  {
-    title: "MichikusaMemo",
-    desc: "位置情報と紐付けしたメモ帳アプリ",
-    details:
-      "場所にメモを書くことのできるアプリです。旅行やカンファレンスなどで飛び回る人に向けたアプリです。SwiftUIで実装し、リリースしました。DBのクラウド化を目指しています。",
-    technologies: ["IOS", "SwiftUI", "MapKit"],
-  },
-  {
-    title: "スマプロ",
-    desc: "校内のプロジェクト活動",
-    details:
-      "2年生からリーダーを務めている。大学内のプロジェクト団体です。アプリ開発を中心に、WebやUnityなど幅広く勉強しています。",
-    technologies: ["Web", "IOS", "Android"],
-  },
-  {
-    title: "DevTree",
-    desc: "エンジニア志望向けスキルツリーアプリ",
-    details:
-      "エンジニアが自分に足りてない知識を把握するためのスキルツリーアプリです。2年生になる直前に、新入生たちに向けて開発しました。",
-    technologies: ["Android", "Kotlin", "JetpackCompose", "Room"],
-  },
-]
 
 export default function Home() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null)
   const [isDialogOpen, setIsDialogOpen] = useState<boolean>(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState<boolean>(false)
-  const [events, setEvents] = useState<TimelineEvent[]>([
-    {
-      year: "2025",
-      title: "インターンシップ",
-      description: "就業型インターン 1 ヶ月間",
-      organization: "合同会社DMM.com",
-      date: "8月",
-      details: "コンポーネント設計から、テスト、バグ修正まで幅広く学びました。とても勉強になりました。",
-      isExpanded: false,
-    },
-    {
-      year: "2025",
-      title: "Hackit",
-      description: "校内ハッカソン運営",
-      date: "8月",
-      details: "校内 13 サークルが所属する DevelopHub にて、3 日間開催のハッカソンを主催しました。",
-      isExpanded: false,
-    },
-    {
-      year: "2025",
-      title: "DeadLine Widgetリリース",
-      description: "ハッカソンの作品をリリース",
-      date: "6月",
-      details: "技育キャンプハッカソンに参加し、DeadLine Widgetをリリースしました。これは、締め切りを管理するためのウィジェットです。",
-      isExpanded: false,
-    },
-    {
-      year: "2025",
-      title: "バックエンド設計のインターンシップ",
-      description: "DB , API 設計に挑戦",
-      organization: "株式会社ゆめみ",
-      date: "5月",
-      details: "DBやAPI設計を学ぶインターンシップに参加。ER図や実践的な設計手法を学びました。",
-      isExpanded: false,
-    },
-    {
-      year: "2025",
-      title: "長期インターンシップ",
-      description: "Goでの大規模開発に挑戦",
-      organization: "株式会社ENECHANGE",
-      date: "4月",
-      details: "ENECHANGEの長期インターンシップに参加し、GoやTypeScriptを使った大規模開発に取り組んでいます。",
-      isExpanded: false,
-    },
-    {
-      year: "2025",
-      title: "LogiLink開発開始",
-      description: "KITHackthonで受賞",
-      date: "3月",
-      details: "2024物流問題の解決を目指し、SNS型プラットフォームを開発しました。それぞれをネイティブで開発中です。",
-      isExpanded: false,
-    },
-    {
-      year: "2025",
-      title: "MichikusaMemoリリース",
-      description: "IOSアプリ初リリース",
-      date: "3月",
-      details:
-        "位置情報と紐付けて、メモを管理することができるアプリです。SwiftUIで実装し、リリースしました。DBのクラウド化を目指しています。",
-      isExpanded: false,
-    },
-    {
-      year: "2025",
-      title: "インターンシップ",
-      description: "KotlinでAIチャットボットアプリを開発",
-      organization: "株式会社CyberAgent",
-      date: "2月",
-      details: "MVVMやCI/CDなどの技術を学びました。良いメンターさんに巡り会え、とても良い経験になりました。",
-      isExpanded: false,
-    },
-    {
-      year: "2025",
-      title: "インターンシップ",
-      description: "Swiftのチュートリアル",
-      organization: "BetaComputing株式会社",
-      date: "1月",
-      details: "Swiftの基礎を学び、実務のお話を聞くことができました。",
-      isExpanded: false,
-    },
-    {
-      year: "2024",
-      title: "PresentAI開発",
-      description: "プレゼン資料作成アプリ",
-      date: "12月",
-      details:
-        "プレゼン資料を作成する際に、AIが自動でサポートしてくれるアプリです。これを通し、Web開発の基礎を学びました。",
-      isExpanded: false,
-    },
-    {
-      year: "2024",
-      title: "スマプロ参加",
-      description: "校内のプロジェクト活動に参加",
-      date: "4月",
-      details:
-        "ここで初めてアプリ開発に触れ、Androidアプリの開発を学びました。チームでの開発やコードレビューなど、エンジニアとしての基礎を学びました。",
-      isExpanded: false,
-    },
-    {
-      year: "2024",
-      title: "大学入学",
-      description: "金沢工業大学に入学",
-      date: "4月",
-      details: "情報工学を専攻し、プログラミングの基礎を学び始める",
-      isExpanded: false,
-    },
-  ])
+  const [events, setEvents] = useState<TimelineEvent[]>(timelineEvents)
 
   const openProjectDetails = (project: Project) => {
     setSelectedProject(project)
@@ -219,7 +55,7 @@ export default function Home() {
           {/* Desktop navigation */}
           <div className="hidden md:block ml-auto">
             <ul className="flex justify-end space-x-6 text-lg font-medium">
-              {["about", "skills", "projects", "timeline", "reports", "contact"].map((section) => (
+              {content.navigationItems.map((section) => (
                 <li key={section} className="hover:text-indigo-400 transition-colors">
                   <button onClick={() => scrollToSection(section)}>
                     {section.charAt(0).toUpperCase() + section.slice(1)}
@@ -234,7 +70,7 @@ export default function Home() {
         {mobileMenuOpen && (
           <div className="md:hidden bg-[#111827] border-t border-gray-700 py-4 px-4 animate-fadeIn">
             <ul className="flex flex-col space-y-4">
-              {["about", "skills", "projects", "timeline", "reports", "contact"].map((section) => (
+              {content.navigationItems.map((section) => (
                 <li key={section} className="hover:text-indigo-400 transition-colors">
                   <button
                     onClick={() => scrollToSection(section)}
@@ -253,8 +89,8 @@ export default function Home() {
       <section className="pt-32 pb-20 flex flex-col items-center px-4">
         <div className="mb-8 transform transition hover:scale-105 duration-300">
           <Image
-            src="/monaka.png"
-            alt="プロフィール画像"
+            src={content.profile.image}
+            alt={content.profile.imageAlt}
             width={192}
             height={192}
             priority
@@ -262,27 +98,15 @@ export default function Home() {
           />
         </div>
 
-        <h1 className="text-indigo-600 text-4xl md:text-6xl font-bold drop-shadow-lg mb-6 text-center">高岡己太朗</h1>
+        <h1 className="text-indigo-600 text-4xl md:text-6xl font-bold drop-shadow-lg mb-6 text-center">{content.profile.name}</h1>
       </section>
 
       {/* About Section */}
       <section id="about" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-semibold text-center text-indigo-600 mb-8">About me</h2>
-          <p className="text-lg md:text-xl text-center max-w-6xl mx-auto text-gray-800 px-4">
-            金沢工業大学で情報工学を学んでいる&quot;こたろう&quot;と申します
-            <br className="hidden sm:block" />
-            最近はAndroidアプリ開発にハマっていて、技術イベントにもよく出没します。
-            <br className="hidden sm:block" />
-            コードを書いたり、最新技術を追ったりするのが好きで、つい時間を忘れてしまうタイプです。
-            <br className="hidden sm:block" />
-            猫とゲームが癒し。
-            <br className="hidden sm:block" />
-            <span className="block mt-4 mb-6">
-              夢は全言語をマスターすることです！！
-              <br className="hidden sm:block" />
-              気軽に話しかけてください！
-            </span>
+          <h2 className="text-3xl font-semibold text-center text-indigo-600 mb-8">{content.about.title}</h2>
+          <p className="text-lg md:text-xl text-center max-w-6xl mx-auto text-gray-800 px-4 whitespace-pre-line">
+            {content.about.description}
           </p>
         </div>
       </section>
@@ -290,24 +114,9 @@ export default function Home() {
       {/* Skills Section */}
       <section id="skills" className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-semibold text-center text-indigo-600 mb-10">Skills</h2>
+          <h2 className="text-3xl font-semibold text-center text-indigo-600 mb-10">{content.skills.title}</h2>
           <div className="flex justify-center flex-wrap gap-2 sm:gap-3 md:gap-4 max-w-4xl mx-auto">
-            {[
-              "Jetpack Compose",
-              "SwiftUI",
-              "C",
-              "Python",
-              "Flutter",
-              "React",
-              "TypeScript",
-              "Next.js",
-              "Go",
-              "Figma",
-              "Kubernetes",
-              "Docker",
-              "LLM",
-              "Ruby",
-            ].map((skill) => (
+            {skills.map((skill) => (
               <div
                 key={skill}
                 className="px-3 sm:px-4 md:px-6 py-2 bg-indigo-500 text-white text-sm md:text-lg rounded-full hover:bg-indigo-700 transition shadow-sm"
@@ -322,7 +131,7 @@ export default function Home() {
       {/* Projects Section */}
       <section id="projects" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-semibold text-center text-indigo-600 mb-8">プロジェクト</h2>
+          <h2 className="text-3xl font-semibold text-center text-indigo-600 mb-8">{content.projects.title}</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-6xl mx-auto">
             {projects.map((project) => (
               <button
@@ -376,7 +185,7 @@ export default function Home() {
       {/* Timeline Section */}
       <section id="timeline" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-semibold text-center text-indigo-600 mb-10">これまでの活動</h2>
+          <h2 className="text-3xl font-semibold text-center text-indigo-600 mb-10">{content.timeline.title}</h2>
           <div className="max-w-5xl mx-auto">
             <div className="relative">
               {/* Timeline center line - hidden on mobile, visible on md and up */}
@@ -462,89 +271,19 @@ export default function Home() {
       {/* Reports Section */}
       <section id="reports" className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-semibold text-center text-indigo-600 mb-8">レポート</h2>
+          <h2 className="text-3xl font-semibold text-center text-indigo-600 mb-8">{content.reports.title}</h2>
           <div className="max-w-2xl mx-auto">
-            <a
-              href="https://note.com/kota28/n/nadc6d01eeb3a"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-gray-700 underline py-2 hover:text-indigo-600 transition-colors text-xs sm:text-sm"
-            >
-              ・モチベ爆上がりの TSKaigi
-            </a>
-            <a
-              href="https://note.com/kota28/n/n664275bb1967"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-gray-700 underline py-2 hover:text-indigo-600 transition-colors text-xs sm:text-sm"
-            >
-              ・「アーキテクチャって何？」から始まったインターンの学び
-            </a>
-            <a
-              href="https://qiita.com/ko-tarou/items/09130bb977fb9fa798d4"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-gray-700 underline py-2 hover:text-indigo-600 transition-colors text-xs sm:text-sm"
-            >
-              ・Kubectl AIの使い方
-            </a>
-            <a
-              href="https://qiita.com/ko-tarou/items/17bc649c20c3d9257712"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-gray-700 underline py-2 hover:text-indigo-600 transition-colors text-xs sm:text-sm"
-            >
-              ・後輩のためのFigma入門
-            </a>
-            
-            <a
-              href="https://qiita.com/ko-tarou/items/252b48ce0dc375ab2657"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-gray-700 underline py-2 hover:text-indigo-600 transition-colors text-xs sm:text-sm"
-            >
-              ・WebGPUを使ってAI推論を高速化してみた!
-            </a>
-            <a
-              href="https://qiita.com/ko-tarou/items/6e3bba14c7259118cc36"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-gray-700 underline py-2 hover:text-indigo-600 transition-colors text-xs sm:text-sm"
-            >
-              ・Wallpaper EngineをPythonで再現？Pygameで作るアニメーション壁紙
-            </a>
-            <a
-              href="https://qiita.com/ko-tarou/items/c0190b34b1ddc12aada7"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-gray-700 underline py-2 hover:text-indigo-600 transition-colors text-xs sm:text-sm"
-            >
-              ・Qwenをローカルで使ってみた。
-            </a>
-            <a
-              href="https://qiita.com/ko-tarou/items/475720dd3beba4f47547"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-gray-700 underline py-2 hover:text-indigo-600 transition-colors text-xs sm:text-sm"
-            >
-              ・Gradleファイルを理解しよう
-            </a>
-            <a
-              href="https://qiita.com/ko-tarou/items/4a8992b535a897ecaf14"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-gray-700 underline py-2 hover:text-indigo-600 transition-colors text-xs sm:text-sm"
-            >
-              ・Android の Navigation について
-            </a>
-            <a
-              href="https://tech.enechange.co.jp/entry/2025/06/17/182552"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block text-gray-700 underline py-2 hover:text-indigo-600 transition-colors text-xs sm:text-sm"
-            >
-              ・ENECHANGE で磨いたバックエンドスキルと温かいチーム文化
-            </a>
+            {reports.map((report, index) => (
+              <a
+                key={index}
+                href={report.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block text-gray-700 underline py-2 hover:text-indigo-600 transition-colors text-xs sm:text-sm"
+              >
+                {report.title}
+              </a>
+            ))}
           </div>
         </div>
       </section>
@@ -552,22 +291,22 @@ export default function Home() {
       {/* Contact Section */}
       <section id="contact" className="py-16">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-semibold text-indigo-600 mb-8">Contact</h2>
-          <p className="text-lg mb-6 text-gray-700">お問い合わせはこちらから</p>
+          <h2 className="text-3xl font-semibold text-indigo-600 mb-8">{content.contact.title}</h2>
+          <p className="text-lg mb-6 text-gray-700">{content.contact.description}</p>
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
             <a
-              href="mailto:akokoa1221@gmail.com"
+              href={`mailto:${content.contact.email}`}
               className="bg-indigo-600 text-white px-6 py-3 rounded-full hover:bg-indigo-700 transition shadow-md"
             >
-              メールを送る
+              {content.contact.emailText}
             </a>
             <a
-              href="https://x.com/monaka_12"
+              href={content.contact.social.url}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gray-800 text-white px-6 py-3 rounded-full hover:bg-gray-900 transition shadow-md"
             >
-              SNSで繋がる
+              {content.contact.social.text}
             </a>
           </div>
         </div>
@@ -576,7 +315,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="bg-[#111827] text-white py-6">
         <div className="container mx-auto px-4 text-center">
-          <p>© 2025 高岡己太郎 All Rights Reserved.</p>
+          <p>{content.footer.copyright}</p>
         </div>
       </footer>
     </main>

@@ -17,6 +17,15 @@ export const activitiesEvents: TimelineEvent[] = [
   {
     year: "2025",
     title: "インターンシップ",
+    description: "就業型インターン 2週間",
+    organization: "チームラボ株式会社",
+    date: "10月",
+    details: "実際の業務に参加し、設計から実装までを行いました。StateFlowやアーキテクチャの思想を深く理解できました。",
+    isExpanded: false,
+  },
+  {
+    year: "2025",
+    title: "インターンシップ",
     description: "就業型インターン 1 ヶ月間",
     organization: "合同会社DMM.com",
     date: "8月",

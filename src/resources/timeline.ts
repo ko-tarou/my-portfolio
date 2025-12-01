@@ -17,6 +17,15 @@ export const activitiesEvents: TimelineEvent[] = [
   {
     year: "2025",
     title: "インターンシップ",
+    description: "就業型インターン 1ヶ月",
+    organization: "株式会社ヤプリ",
+    date: "11月",
+    details: "プラットフォーム開発に挑戦し、リポジトリの機能の守備範囲に驚きました。",
+    isExpanded: false,
+  },
+  {
+    year: "2025",
+    title: "インターンシップ",
     description: "就業型インターン 2週間",
     organization: "チームラボ株式会社",
     date: "10月",
@@ -55,6 +64,15 @@ export const activitiesEvents: TimelineEvent[] = [
     organization: "株式会社ゆめみ",
     date: "5月",
     details: "DBやAPI設計を学ぶインターンシップに参加。ER図や実践的な設計手法を学びました。",
+    isExpanded: false,
+  },
+  {
+    year: "2025",
+    title: "長期インターンシップ",
+    description: "Streamlit のライブラリ作成に挑戦",
+    organization: "KIT 情報処理サービスセンター",
+    date: "4月",
+    details: "金沢工業大学の長期インターンシップに参加し、PythonやStreamlitを使ったWeb開発に取り組んでいます。",
     isExpanded: false,
   },
   {
@@ -198,14 +216,6 @@ export const hackathonEvents: TimelineEvent[] = [
     isExpanded: false,
   },
   {
-    year: "2025",
-    title: "Android × Camera",
-    description: "写真で撮るだけ家計簿 'おさいふカメラ'",
-    date: "2月",
-    details: "写真を撮るだけで家計簿を管理できるアプリです。ネイティブならではの機能を搭載し、MVVMで堅牢なアーキテクチャで実装されています。",
-    isExpanded: false,
-  },
-  {
     year: "2024",
     title: "Android と LLM の融合",
     description: "自分だけの Vtuber 'AIVY'",
@@ -260,6 +270,14 @@ export const hackathonEvents: TimelineEvent[] = [
 
 // カンファレンスデータ
 export const conferenceEvents: TimelineEvent[] = [
+  {
+    year: "2025",
+    title: "Kotlin Fest",
+    description: "Kotlin の祭りに参加！！",
+    date: "11月",
+    details: "想像以上にバックエンド Kotlin の勢いが強く、言語仕様の理解の甘さを痛感しました。",
+    isExpanded: false,
+  },
   {
     year: "2025",
     title: "Vue Fes",

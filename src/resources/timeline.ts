@@ -272,6 +272,14 @@ export const hackathonEvents: TimelineEvent[] = [
 export const conferenceEvents: TimelineEvent[] = [
   {
     year: "2025",
+    title: "アーキテクチャカンファレンス",
+    description: "アーキテクチャが集う 2 日間！！",
+    date: "11月",
+    details: "各社のクラウドアーキテクチャを拝見し、憧れの Gregor Hohpe さんにお会いすることができました。",
+    isExpanded: false,
+  },
+  {
+    year: "2025",
     title: "Kotlin Fest",
     description: "Kotlin の祭りに参加！！",
     date: "11月",

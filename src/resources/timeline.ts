@@ -15,6 +15,24 @@ export type TimelineTab = 'activities' | 'hackathons' | 'conferences'
 // これまでの活動データ
 export const activitiesEvents: TimelineEvent[] = [
   {
+    year: "2026",
+    title: "インターンシップ",
+    description: "就業型インターン 1ヶ月",
+    organization: "株式会社CyberAgent",
+    date: "3月",
+    details: "Tappleチームにて1ヶ月間のAndroid開発に取り組みました。チーム全体の視座で動く自走力が身につきました。",
+    isExpanded: false,
+  },
+  {
+    year: "2026",
+    title: "インターンシップ",
+    description: "1DAYインターン",
+    organization: "株式会社Relic",
+    date: "3月",
+    details: "ハッカソン型のインターンで、Boltを使った開発からTikTokへの告知動画によるマーケティングまでを1日で行いました。",
+    isExpanded: false,
+  },
+  {
     year: "2025",
     title: "インターンシップ",
     description: "就業型インターン 1ヶ月",
@@ -149,6 +167,24 @@ export const activitiesEvents: TimelineEvent[] = [
 
 // ハッカソンデータ
 export const hackathonEvents: TimelineEvent[] = [
+  {
+    year: "2026",
+    title: "スマプロハッカソン",
+    description: "ビリヤードの玉になれ 'VRiard'",
+    organization: "優秀賞",
+    date: "2月",
+    details: "Meta Questを使い、ビリヤードの玉になってプレイするVRゲームを開発しました。Unityで実装し、バックエンドと通信部分を担当しました。",
+    isExpanded: false,
+  },
+  {
+    year: "2026",
+    title: "Webチューニングハッカソン",
+    description: "重いWebページを5時間でどこまで速くできるか",
+    organization: "株式会社リクルート",
+    date: "2月",
+    details: "Lighthouseのスコアで評価されるパフォーマンスチューニングに挑戦しました。フロントエンドを極めることの解像度が上がる、非常に良い刺激となりました。",
+    isExpanded: false,
+  },
   {
     year: "2025",
     title: "JPHACKS2025参加",

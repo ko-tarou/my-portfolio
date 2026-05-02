@@ -26,15 +26,6 @@ export const activitiesEvents: TimelineEvent[] = [
   {
     year: "2026",
     title: "インターンシップ",
-    description: "長期インターン",
-    organization: "AlphaOmega",
-    date: "2月",
-    details: "フルTypeScriptでの開発に取り組んでいます。",
-    isExpanded: false,
-  },
-  {
-    year: "2026",
-    title: "インターンシップ",
     description: "就業型インターン 1ヶ月",
     organization: "株式会社CyberAgent",
     date: "3月",
@@ -48,6 +39,15 @@ export const activitiesEvents: TimelineEvent[] = [
     organization: "株式会社Relic",
     date: "3月",
     details: "ハッカソン型のインターンで、Boltを使った開発からTikTokへの告知動画によるマーケティングまでを1日で行いました。",
+    isExpanded: false,
+  },
+  {
+    year: "2026",
+    title: "インターンシップ",
+    description: "長期インターン",
+    organization: "AlphaOmega",
+    date: "2月",
+    details: "フルTypeScriptでの開発に取り組んでいます。",
     isExpanded: false,
   },
   {

@@ -5,7 +5,7 @@ import { useState } from "react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
 import { ChevronDown, ChevronUp, Menu, X } from "lucide-react"
 import { projects, type Project } from "@/resources/projects"
-import { timelineData, type TimelineEvent, type TimelineTab } from "@/resources/timeline"
+import { timelineData, timelineTabs, type TimelineEvent, type TimelineTab } from "@/resources/timeline"
 import { skills } from "@/resources/skills"
 import { reports } from "@/resources/reports"
 import { content } from "@/resources/content"
@@ -194,49 +194,30 @@ export default function Home() {
           <h2 className="text-3xl font-semibold text-center text-indigo-600 mb-10">{content.timeline.title}</h2>
           
           {/* Tab Navigation */}
-          <div className="flex justify-center mb-8">
-            <div className="bg-white rounded-lg p-1 shadow-md relative">
+          <div className="flex justify-center mb-8 px-2">
+            <div className="bg-white rounded-lg p-1 shadow-md relative flex w-full max-w-3xl overflow-x-auto">
               {/* Animated background indicator */}
               <div
-                className={`absolute top-1 bottom-1 bg-indigo-600 rounded-md transition-all duration-300 ease-in-out ${
-                  activeTab === 'activities' 
-                    ? 'left-1 w-[calc(33.333%-0.25rem)]' 
-                    : activeTab === 'hackathons'
-                    ? 'left-[calc(33.333%+0.25rem)] w-[calc(33.333%-0.5rem)]'
-                    : 'left-[calc(66.666%+0.25rem)] w-[calc(33.333%-0.25rem)]'
-                }`}
+                className="absolute top-1 bottom-1 bg-indigo-600 rounded-md transition-all duration-300 ease-in-out"
+                style={{
+                  left: `calc(${timelineTabs.findIndex((t) => t.key === activeTab)} * (100% / ${timelineTabs.length}) + 0.25rem)`,
+                  width: `calc(100% / ${timelineTabs.length} - 0.5rem)`,
+                }}
               />
-              
-              <button
-                onClick={() => handleTabChange('activities')}
-                className={`relative z-10 px-6 py-3 rounded-md text-base font-medium transition-colors duration-300 ${
-                  activeTab === 'activities'
-                    ? 'text-white'
-                    : 'text-gray-600 hover:text-indigo-600'
-                }`}
-              >
-                これまでの活動
-              </button>
-              <button
-                onClick={() => handleTabChange('hackathons')}
-                className={`relative z-10 px-6 py-3 rounded-md text-base font-medium transition-colors duration-300 ${
-                  activeTab === 'hackathons'
-                    ? 'text-white'
-                    : 'text-gray-600 hover:text-indigo-600'
-                }`}
-              >
-                ハッカソン
-              </button>
-              <button
-                onClick={() => handleTabChange('conferences')}
-                className={`relative z-10 px-6 py-3 rounded-md text-base font-medium transition-colors duration-300 ${
-                  activeTab === 'conferences'
-                    ? 'text-white'
-                    : 'text-gray-600 hover:text-indigo-600'
-                }`}
-              >
-                カンファレンス
-              </button>
+
+              {timelineTabs.map((tab) => (
+                <button
+                  key={tab.key}
+                  onClick={() => handleTabChange(tab.key)}
+                  className={`relative z-10 flex-1 whitespace-nowrap px-3 sm:px-4 py-3 rounded-md text-sm sm:text-base font-medium transition-colors duration-300 ${
+                    activeTab === tab.key
+                      ? 'text-white'
+                      : 'text-gray-600 hover:text-indigo-600'
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
             </div>
           </div>
           <div className="max-w-5xl mx-auto">

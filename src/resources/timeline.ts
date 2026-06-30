@@ -10,10 +10,149 @@ export interface TimelineEvent {
 }
 
 // タブの型定義
-export type TimelineTab = 'activities' | 'hackathons' | 'conferences'
+export type TimelineTab =
+  | 'activities'
+  | 'events'
+  | 'internships'
+  | 'hackathons'
+  | 'conferences'
 
-// これまでの活動データ
+// タブの表示設定（ナビゲーションの並び順とラベル）
+export const timelineTabs: { key: TimelineTab; label: string }[] = [
+  { key: 'activities', label: 'これまでの活動' },
+  { key: 'events', label: 'イベント運営' },
+  { key: 'internships', label: 'インターン' },
+  { key: 'hackathons', label: 'ハッカソン' },
+  { key: 'conferences', label: 'カンファレンス' },
+]
+
+// これまでの活動データ（コア活動：プロジェクト・リーダー経験・WRO など）
 export const activitiesEvents: TimelineEvent[] = [
+  {
+    year: "2026",
+    title: "HitoLink（要確認）",
+    description: "プロダクト開発",
+    date: "（要確認）",
+    details: "プロダクト「HitoLink」の開発。概要・時期・実績は要確認です。",
+    isExpanded: false,
+  },
+  {
+    year: "2025",
+    title: "DevelopersHub リーダー",
+    description: "コミュニティ運営のリーダーを担当",
+    organization: "DevelopersHub",
+    date: "（要確認）",
+    details: "校内コミュニティ DevelopersHub のリーダーとして、運営・企画に従事しました。担当範囲や期間の詳細は要確認です。",
+    isExpanded: false,
+  },
+  {
+    year: "2025",
+    title: "DeadLine Widgetリリース",
+    description: "ハッカソンの作品をリリース",
+    date: "6月",
+    details: "技育キャンプハッカソンに参加し、DeadLine Widgetをリリースしました。これは、締め切りを管理するためのウィジェットです。",
+    isExpanded: false,
+  },
+  {
+    year: "2025",
+    title: "LogiLink開発開始",
+    description: "KITHackthonで受賞",
+    date: "3月",
+    details: "2024物流問題の解決を目指し、SNS型プラットフォームを開発しました。それぞれをネイティブで開発中です。",
+    isExpanded: false,
+  },
+  {
+    year: "2025",
+    title: "MichikusaMemoリリース",
+    description: "IOSアプリ初リリース",
+    date: "3月",
+    details:
+      "位置情報と紐付けて、メモを管理することができるアプリです。SwiftUIで実装し、リリースしました。DBのクラウド化を目指しています。",
+    isExpanded: false,
+  },
+  {
+    year: "2024",
+    title: "PresentAI開発",
+    description: "プレゼン資料作成アプリ",
+    date: "12月",
+    details:
+      "プレゼン資料を作成する際に、AIが自動でサポートしてくれるアプリです。これを通し、Web開発の基礎を学びました。",
+    isExpanded: false,
+  },
+  {
+    year: "2024",
+    title: "スマプロ参加",
+    description: "校内のプロジェクト活動に参加",
+    date: "4月",
+    details:
+      "ここで初めてアプリ開発に触れ、Androidアプリの開発を学びました。チームでの開発やコードレビューなど、エンジニアとしての基礎を学びました。",
+    isExpanded: false,
+  },
+  {
+    year: "2024",
+    title: "大学入学",
+    description: "金沢工業大学に入学",
+    date: "4月",
+    details: "情報工学を専攻し、プログラミングの基礎を学び始める",
+    isExpanded: false,
+  },
+  {
+    year: "2022",
+    title: "WRO（要確認）",
+    description: "ロボット競技に出場（年・実績は要確認）",
+    details: "World Robot Olympiad（WRO）等のロボット競技に出場しました。出場年・成績などの詳細は要確認です。",
+    isExpanded: false,
+  },
+]
+
+// イベント運営データ（HackIT・交流会・雑談会 など）
+export const eventsEvents: TimelineEvent[] = [
+  {
+    year: "2026",
+    title: "DevelopersHub 交流会 主催",
+    description: "1〜3年生の学年横断交流会を運営",
+    date: "6月",
+    details: "DevelopersHub にて、1〜3年生が学年を越えて交流する会を主催・運営しました。コミュニティ内の縦のつながりを生む場づくりに取り組みました。",
+    isExpanded: false,
+  },
+  {
+    year: "2025",
+    title: "Hackit",
+    description: "校内ハッカソン運営",
+    date: "8月",
+    details: "校内 13 サークルが所属する DevelopHub にて、3 日間開催のハッカソンを主催しました。",
+    isExpanded: false,
+  },
+  {
+    year: "2025",
+    title: "リーダー雑談会（要確認）",
+    description: "リーダー向けの雑談会を運営",
+    date: "（要確認）",
+    details: "リーダー同士が交流する雑談会を運営しました。開催時期・回数などの詳細は要確認です。",
+    isExpanded: false,
+  },
+]
+
+// インターンデータ（就業型・短期インターン）
+export const internshipEvents: TimelineEvent[] = [
+  {
+    year: "2026",
+    title: "インターンシップ",
+    description: "2DAYインターン",
+    organization: "STORES 株式会社",
+    date: "6月",
+    details: "2日間の就業型インターンに参加し、実際の開発業務に触れました。",
+    isExpanded: false,
+  },
+  {
+    year: "2026",
+    title: "インターンシップ",
+    description: "1DAYインターン",
+    organization: "GA technologies",
+    date: "6月",
+    details: "GA technologies の1DAYインターンに参加し、事業内容や開発への理解を深めました。",
+    isExpanded: false,
+  },
   {
     year: "2026",
     title: "インターンシップ",
@@ -79,22 +218,6 @@ export const activitiesEvents: TimelineEvent[] = [
   },
   {
     year: "2025",
-    title: "Hackit",
-    description: "校内ハッカソン運営",
-    date: "8月",
-    details: "校内 13 サークルが所属する DevelopHub にて、3 日間開催のハッカソンを主催しました。",
-    isExpanded: false,
-  },
-  {
-    year: "2025",
-    title: "DeadLine Widgetリリース",
-    description: "ハッカソンの作品をリリース",
-    date: "6月",
-    details: "技育キャンプハッカソンに参加し、DeadLine Widgetをリリースしました。これは、締め切りを管理するためのウィジェットです。",
-    isExpanded: false,
-  },
-  {
-    year: "2025",
     title: "バックエンド設計のインターンシップ",
     description: "DB , API 設計に挑戦",
     organization: "株式会社ゆめみ",
@@ -122,23 +245,6 @@ export const activitiesEvents: TimelineEvent[] = [
   },
   {
     year: "2025",
-    title: "LogiLink開発開始",
-    description: "KITHackthonで受賞",
-    date: "3月",
-    details: "2024物流問題の解決を目指し、SNS型プラットフォームを開発しました。それぞれをネイティブで開発中です。",
-    isExpanded: false,
-  },
-  {
-    year: "2025",
-    title: "MichikusaMemoリリース",
-    description: "IOSアプリ初リリース",
-    date: "3月",
-    details:
-      "位置情報と紐付けて、メモを管理することができるアプリです。SwiftUIで実装し、リリースしました。DBのクラウド化を目指しています。",
-    isExpanded: false,
-  },
-  {
-    year: "2025",
     title: "インターンシップ",
     description: "KotlinでAIチャットボットアプリを開発",
     organization: "株式会社CyberAgent",
@@ -155,36 +261,18 @@ export const activitiesEvents: TimelineEvent[] = [
     details: "Swiftの基礎を学び、実務のお話を聞くことができました。",
     isExpanded: false,
   },
-  {
-    year: "2024",
-    title: "PresentAI開発",
-    description: "プレゼン資料作成アプリ",
-    date: "12月",
-    details:
-      "プレゼン資料を作成する際に、AIが自動でサポートしてくれるアプリです。これを通し、Web開発の基礎を学びました。",
-    isExpanded: false,
-  },
-  {
-    year: "2024",
-    title: "スマプロ参加",
-    description: "校内のプロジェクト活動に参加",
-    date: "4月",
-    details:
-      "ここで初めてアプリ開発に触れ、Androidアプリの開発を学びました。チームでの開発やコードレビューなど、エンジニアとしての基礎を学びました。",
-    isExpanded: false,
-  },
-  {
-    year: "2024",
-    title: "大学入学",
-    description: "金沢工業大学に入学",
-    date: "4月",
-    details: "情報工学を専攻し、プログラミングの基礎を学び始める",
-    isExpanded: false,
-  },
 ]
 
 // ハッカソンデータ
 export const hackathonEvents: TimelineEvent[] = [
+  {
+    year: "2026",
+    title: "Hack the Liquid 参加",
+    description: "2日間のハッカソンに参加",
+    date: "6月",
+    details: "2日間開催のハッカソン Hack the Liquid に参加しました。短期間でのチーム開発に取り組みました。",
+    isExpanded: false,
+  },
   {
     year: "2026",
     title: "スマプロハッカソン",
@@ -417,6 +505,8 @@ export const conferenceEvents: TimelineEvent[] = [
 // タブごとのデータマッピング
 export const timelineData = {
   activities: activitiesEvents,
+  events: eventsEvents,
+  internships: internshipEvents,
   hackathons: hackathonEvents,
   conferences: conferenceEvents,
 }

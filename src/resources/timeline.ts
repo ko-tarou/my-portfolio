@@ -47,6 +47,26 @@ export const activitiesEvents: TimelineEvent[] = [
   },
   {
     year: "2025",
+    title: "スマプロ リーダー",
+    description: "校内アプリ開発プロジェクトのリーダー",
+    organization: "スマートフォンアプリ開発プロジェクト",
+    date: "2025年（通年・要確認）",
+    details:
+      "スマートフォンアプリ開発プロジェクト（スマプロ）のリーダーを務めました。新歓・各種勉強会（Git/GitHub・React・Android・Web）・LT会・チーム開発のキックオフから発表までを企画・運営しました。",
+    isExpanded: false,
+  },
+  {
+    year: "2025",
+    title: "GDGoC KIT Organizer",
+    description: "学生コミュニティの Organizer を担当",
+    organization: "GDGoC KIT",
+    date: "（就任時期は要確認）",
+    details:
+      "Google Developer Groups on Campus（GDGoC）KIT の Organizer を務めました。DroidKaigi.collect #26 @Kanazawa を GDGoC KIT 共催として運営するなど、地域の技術コミュニティ活動に携わりました。就任時期の詳細は要確認です。",
+    isExpanded: false,
+  },
+  {
+    year: "2025",
     title: "DeadLine Widgetリリース",
     description: "ハッカソンの作品をリリース",
     date: "6月",
@@ -90,6 +110,26 @@ export const activitiesEvents: TimelineEvent[] = [
   },
   {
     year: "2024",
+    title: "セキプロ 副リーダー",
+    description: "セキュリティ系プロジェクトの副リーダー",
+    organization: "セキュリティスキルアッププロジェクト",
+    date: "2024年〜（副リーダー就任時期は要確認）",
+    details:
+      "セキュリティスキルアッププロジェクト（セキプロ）に参加し、副リーダーとして運営に携わりました。新歓をはじめとした活動の企画・運営に関わっています。副リーダー就任の時期は要確認です。",
+    isExpanded: false,
+  },
+  {
+    year: "2024",
+    title: "BusStop アプリ班リーダー",
+    description: "プロジェクトのアプリ班リーダー",
+    organization: "BusStop",
+    date: "2024年〜（要確認）",
+    details:
+      "BusStop プロジェクトのアプリ班リーダーとして、アプリ開発を主導しました。担当期間・役割の詳細は要確認です。",
+    isExpanded: false,
+  },
+  {
+    year: "2024",
     title: "大学入学",
     description: "金沢工業大学に入学",
     date: "4月",
@@ -125,10 +165,30 @@ export const eventsEvents: TimelineEvent[] = [
   },
   {
     year: "2025",
-    title: "リーダー雑談会（要確認）",
-    description: "リーダー向けの雑談会を運営",
-    date: "（要確認）",
-    details: "リーダー同士が交流する雑談会を運営しました。開催時期・回数などの詳細は要確認です。",
+    title: "スマプロ 勉強会・LT会 運営",
+    description: "リーダーとして年間の勉強会・LT会を運営",
+    organization: "スマートフォンアプリ開発プロジェクト",
+    date: "通年",
+    details:
+      "スマプロのリーダーとして、新歓・Git/GitHub 勉強会・React ハンズオン・Android 勉強会・Web 勉強会、各種 LT 会（自己紹介LT・研修LT・全学期LT・夏休みLT・就活LT）、チーム開発のキックオフから発表までを年間を通して企画・運営しました。",
+    isExpanded: false,
+  },
+  {
+    year: "2025",
+    title: "DroidKaigi.collect #26 @Kanazawa 運営",
+    description: "GDGoC KIT 共催の地域カンファレンスを運営",
+    organization: "GDGoC KIT 共催",
+    date: "11月",
+    details:
+      "DroidKaigi.collect { #26 @Kanazawa } を GDGoC KIT 共催として運営に携わりました。地域での Android コミュニティイベントの企画・設営に関わりました。",
+    isExpanded: false,
+  },
+  {
+    year: "2026",
+    title: "リーダー雑談会 運営",
+    description: "プロジェクトリーダー同士の雑談会を運営",
+    date: "1月",
+    details: "各プロジェクトのリーダーが集まり交流する雑談会を運営しました（2026年1月開催）。リーダー間の横のつながりを生む場づくりに取り組みました。",
     isExpanded: false,
   },
 ]

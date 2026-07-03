@@ -30,19 +30,21 @@ export const timelineTabs: { key: TimelineTab; label: string }[] = [
 export const activitiesEvents: TimelineEvent[] = [
   {
     year: "2026",
-    title: "HitoLink（要確認）",
-    description: "プロダクト開発",
-    date: "（要確認）",
-    details: "プロダクト「HitoLink」の開発。概要・時期・実績は要確認です。",
+    title: "HitoLink 技術責任者",
+    description: "学生2名で立ち上げた受託開発ベンチャーの技術責任者（共同創業）",
+    organization: "HitoLink",
+    date: "2026年〜現在",
+    details:
+      "代表・星野智範とともに、学生2名で受託開発ベンチャー「HitoLink」を立ち上げ、技術責任者を務めています。「人と人をつなぎ、ビジネスに新しい価値を」をビジョンに、B2B 花卉取引プラットフォーム CompanySeller（Next.js + Go + PostgreSQL）や北山ナーセリー向けアプリなど複数プロダクトの設計・開発を主導。全プロダクト共通の標準技術スタック策定や、コーポレートサイト構築（Next.js、Lighthouse ほぼ全項目満点）も担当しました。",
     isExpanded: false,
   },
   {
-    year: "2025",
+    year: "2026",
     title: "DevelopersHub リーダー",
-    description: "コミュニティ運営のリーダーを担当",
+    description: "BusStop を改称・再出発させたコミュニティのリーダー",
     organization: "DevelopersHub",
-    date: "（要確認）",
-    details: "校内コミュニティ DevelopersHub のリーダーとして、運営・企画に従事しました。担当範囲や期間の詳細は要確認です。",
+    date: "2026年4月〜現在",
+    details: "BusStop 全体リーダーを務めたのち、プロジェクトを DevelopersHub へと改称し生まれ変わらせました。現在は DevelopersHub のリーダーとして運営・企画に従事しています。",
     isExpanded: false,
   },
   {
@@ -50,7 +52,7 @@ export const activitiesEvents: TimelineEvent[] = [
     title: "スマプロ リーダー",
     description: "校内アプリ開発プロジェクトのリーダー",
     organization: "スマートフォンアプリ開発プロジェクト",
-    date: "2025年（通年・要確認）",
+    date: "2025年4月〜2026年3月",
     details:
       "スマートフォンアプリ開発プロジェクト（スマプロ）のリーダーを務めました。新歓・各種勉強会（Git/GitHub・React・Android・Web）・LT会・チーム開発のキックオフから発表までを企画・運営しました。",
     isExpanded: false,
@@ -60,9 +62,9 @@ export const activitiesEvents: TimelineEvent[] = [
     title: "GDGoC KIT Organizer",
     description: "学生コミュニティの Organizer を担当",
     organization: "GDGoC KIT",
-    date: "（就任時期は要確認）",
+    date: "2025年4月頃〜2026年6月",
     details:
-      "Google Developer Groups on Campus（GDGoC）KIT の Organizer を務めました。DroidKaigi.collect #26 @Kanazawa を GDGoC KIT 共催として運営するなど、地域の技術コミュニティ活動に携わりました。就任時期の詳細は要確認です。",
+      "Google Developer Groups on Campus（GDGoC）KIT の Organizer を、スマプロ リーダー就任と同時期（2025年春頃）から2026年6月まで務めました。DroidKaigi.collect #26 @Kanazawa を GDGoC KIT 共催として運営するなど、地域の技術コミュニティ活動に携わりました。",
     isExpanded: false,
   },
   {
@@ -113,19 +115,19 @@ export const activitiesEvents: TimelineEvent[] = [
     title: "セキプロ 副リーダー",
     description: "セキュリティ系プロジェクトの副リーダー",
     organization: "セキュリティスキルアッププロジェクト",
-    date: "2024年〜（副リーダー就任時期は要確認）",
+    date: "2026年4月〜現在（2027年3月まで活動予定）",
     details:
-      "セキュリティスキルアッププロジェクト（セキプロ）に参加し、副リーダーとして運営に携わりました。新歓をはじめとした活動の企画・運営に関わっています。副リーダー就任の時期は要確認です。",
+      "セキュリティプロジェクト（セキプロ）に参加し、副リーダーとして運営に携わっています。新歓をはじめとした活動の企画・運営に関わり、2027年3月まで活動予定です。",
     isExpanded: false,
   },
   {
     year: "2024",
     title: "BusStop アプリ班リーダー",
-    description: "プロジェクトのアプリ班リーダー",
+    description: "プロジェクトのアプリ班リーダー（のちに全体リーダー→DevelopersHub へ）",
     organization: "BusStop",
-    date: "2024年〜（要確認）",
+    date: "2024年1月〜2026年3月",
     details:
-      "BusStop プロジェクトのアプリ班リーダーとして、アプリ開発を主導しました。担当期間・役割の詳細は要確認です。",
+      "1年次の春に BusStop のアプリ班リーダーとして参画し、アプリ開発を主導しました。2年次の春には BusStop 全体のリーダーへ就任し、その後プロジェクトを DevelopersHub へと改称・再出発させました。",
     isExpanded: false,
   },
   {
@@ -138,9 +140,9 @@ export const activitiesEvents: TimelineEvent[] = [
   },
   {
     year: "2022",
-    title: "WRO（要確認）",
-    description: "ロボット競技に出場（年・実績は要確認）",
-    details: "World Robot Olympiad（WRO）等のロボット競技に出場しました。出場年・成績などの詳細は要確認です。",
+    title: "WRO ロボット競技",
+    description: "世界大会出場（最高11位）・高校で全国大会3回出場",
+    details: "World Robot Olympiad（WRO）に、小学5・6年生および中学1年生のときに世界大会へ出場しました（最高順位は11位）。その後コロナ禍を経て、高校でも全国大会に3回出場しました。※タイムライン上の年（2022）は出場期間全体を表すものではないため、表示位置は要調整。",
     isExpanded: false,
   },
 ]
@@ -171,6 +173,23 @@ export const eventsEvents: TimelineEvent[] = [
     date: "通年",
     details:
       "スマプロのリーダーとして、新歓・Git/GitHub 勉強会・React ハンズオン・Android 勉強会・Web 勉強会、各種 LT 会（自己紹介LT・研修LT・全学期LT・夏休みLT・就活LT）、チーム開発のキックオフから発表までを年間を通して企画・運営しました。",
+    isExpanded: false,
+  },
+  {
+    year: "2024",
+    title: "スマプロハッカソン 運営",
+    description: "DMM スポンサーの校内ハッカソン（計30人弱）にメンバーとして参加",
+    organization: "スマートフォンアプリ開発プロジェクト",
+    date: "",
+    details: "DMM をスポンサーに迎えたスマプロハッカソンに携わりました。2〜4人 × 約8組の計30人弱が参加。自身はいちメンバーとして、後方からチームを見守る形で関わりました。",
+    isExpanded: false,
+  },
+  {
+    year: "2025",
+    title: "Nextend 運営",
+    description: "20人規模のLT会を開催（ファシリテーター＆デザイナー）",
+    date: "",
+    details: "「金沢ハックコネクト」的な20人規模のLT会「Nextend」を開催しました。ファシリテーター兼デザイナーとして、当日の進行と会のデザインを担いました。",
     isExpanded: false,
   },
   {

@@ -10,10 +10,228 @@ export interface TimelineEvent {
 }
 
 // タブの型定義
-export type TimelineTab = 'activities' | 'hackathons' | 'conferences'
+export type TimelineTab =
+  | 'activities'
+  | 'events'
+  | 'internships'
+  | 'hackathons'
+  | 'conferences'
 
-// これまでの活動データ
+// タブの表示設定（ナビゲーションの並び順とラベル）
+export const timelineTabs: { key: TimelineTab; label: string }[] = [
+  { key: 'activities', label: 'これまでの活動' },
+  { key: 'events', label: 'イベント運営' },
+  { key: 'internships', label: 'インターン' },
+  { key: 'hackathons', label: 'ハッカソン' },
+  { key: 'conferences', label: 'カンファレンス' },
+]
+
+// これまでの活動データ（コア活動：プロジェクト・リーダー経験・WRO など）
 export const activitiesEvents: TimelineEvent[] = [
+  {
+    year: "2026",
+    title: "HitoLink 技術責任者",
+    description: "学生2名で立ち上げた受託開発ベンチャーの技術責任者（共同創業）",
+    organization: "HitoLink",
+    date: "2026年〜現在",
+    details:
+      "代表・星野智範とともに、学生2名で受託開発ベンチャー「HitoLink」を立ち上げ、技術責任者を務めています。「人と人をつなぎ、ビジネスに新しい価値を」をビジョンに、B2B 花卉取引プラットフォーム CompanySeller（Next.js + Go + PostgreSQL）や北山ナーセリー向けアプリなど複数プロダクトの設計・開発を主導。全プロダクト共通の標準技術スタック策定や、コーポレートサイト構築（Next.js、Lighthouse ほぼ全項目満点）も担当しました。",
+    isExpanded: false,
+  },
+  {
+    year: "2026",
+    title: "DevelopersHub リーダー",
+    description: "BusStop を改称・再出発させたコミュニティのリーダー",
+    organization: "DevelopersHub",
+    date: "2026年4月〜現在",
+    details: "BusStop 全体リーダーを務めたのち、プロジェクトを DevelopersHub へと改称し生まれ変わらせました。現在は DevelopersHub のリーダーとして運営・企画に従事しています。",
+    isExpanded: false,
+  },
+  {
+    year: "2025",
+    title: "スマプロ リーダー",
+    description: "校内アプリ開発プロジェクトのリーダー",
+    organization: "スマートフォンアプリ開発プロジェクト",
+    date: "2025年4月〜2026年3月",
+    details:
+      "スマートフォンアプリ開発プロジェクト（スマプロ）のリーダーを務めました。新歓・各種勉強会（Git/GitHub・React・Android・Web）・LT会・チーム開発のキックオフから発表までを企画・運営しました。",
+    isExpanded: false,
+  },
+  {
+    year: "2025",
+    title: "GDGoC KIT Organizer",
+    description: "学生コミュニティの Organizer を担当",
+    organization: "GDGoC KIT",
+    date: "2025年4月頃〜2026年6月",
+    details:
+      "Google Developer Groups on Campus（GDGoC）KIT の Organizer を、スマプロ リーダー就任と同時期（2025年春頃）から2026年6月まで務めました。DroidKaigi.collect #26 @Kanazawa を GDGoC KIT 共催として運営するなど、地域の技術コミュニティ活動に携わりました。",
+    isExpanded: false,
+  },
+  {
+    year: "2025",
+    title: "DeadLine Widgetリリース",
+    description: "ハッカソンの作品をリリース",
+    date: "6月",
+    details: "技育キャンプハッカソンに参加し、DeadLine Widgetをリリースしました。これは、締め切りを管理するためのウィジェットです。",
+    isExpanded: false,
+  },
+  {
+    year: "2025",
+    title: "LogiLink開発開始",
+    description: "KITHackthonで受賞",
+    date: "3月",
+    details: "2024物流問題の解決を目指し、SNS型プラットフォームを開発しました。それぞれをネイティブで開発中です。",
+    isExpanded: false,
+  },
+  {
+    year: "2025",
+    title: "MichikusaMemoリリース",
+    description: "IOSアプリ初リリース",
+    date: "3月",
+    details:
+      "位置情報と紐付けて、メモを管理することができるアプリです。SwiftUIで実装し、リリースしました。DBのクラウド化を目指しています。",
+    isExpanded: false,
+  },
+  {
+    year: "2024",
+    title: "PresentAI開発",
+    description: "プレゼン資料作成アプリ",
+    date: "12月",
+    details:
+      "プレゼン資料を作成する際に、AIが自動でサポートしてくれるアプリです。これを通し、Web開発の基礎を学びました。",
+    isExpanded: false,
+  },
+  {
+    year: "2024",
+    title: "スマプロ参加",
+    description: "校内のプロジェクト活動に参加",
+    date: "4月",
+    details:
+      "ここで初めてアプリ開発に触れ、Androidアプリの開発を学びました。チームでの開発やコードレビューなど、エンジニアとしての基礎を学びました。",
+    isExpanded: false,
+  },
+  {
+    year: "2024",
+    title: "セキプロ 副リーダー",
+    description: "セキュリティ系プロジェクトの副リーダー",
+    organization: "セキュリティスキルアッププロジェクト",
+    date: "2026年4月〜現在（2027年3月まで活動予定）",
+    details:
+      "セキュリティプロジェクト（セキプロ）に参加し、副リーダーとして運営に携わっています。新歓をはじめとした活動の企画・運営に関わり、2027年3月まで活動予定です。",
+    isExpanded: false,
+  },
+  {
+    year: "2024",
+    title: "BusStop アプリ班リーダー",
+    description: "プロジェクトのアプリ班リーダー（のちに全体リーダー→DevelopersHub へ）",
+    organization: "BusStop",
+    date: "2024年1月〜2026年3月",
+    details:
+      "1年次の春に BusStop のアプリ班リーダーとして参画し、アプリ開発を主導しました。2年次の春には BusStop 全体のリーダーへ就任し、その後プロジェクトを DevelopersHub へと改称・再出発させました。",
+    isExpanded: false,
+  },
+  {
+    year: "2024",
+    title: "大学入学",
+    description: "金沢工業大学に入学",
+    date: "4月",
+    details: "情報工学を専攻し、プログラミングの基礎を学び始める",
+    isExpanded: false,
+  },
+  {
+    year: "2022",
+    title: "WRO ロボット競技",
+    description: "世界大会出場（最高11位）・高校で全国大会3回出場",
+    details: "World Robot Olympiad（WRO）に、小学5・6年生および中学1年生のときに世界大会へ出場しました（最高順位は11位）。その後コロナ禍を経て、高校でも全国大会に3回出場しました。※タイムライン上の年（2022）は出場期間全体を表すものではないため、表示位置は要調整。",
+    isExpanded: false,
+  },
+]
+
+// イベント運営データ（HackIT・交流会・雑談会 など）
+export const eventsEvents: TimelineEvent[] = [
+  {
+    year: "2026",
+    title: "DevelopersHub 交流会 主催",
+    description: "1〜3年生の学年横断交流会を運営",
+    date: "6月",
+    details: "DevelopersHub にて、1〜3年生が学年を越えて交流する会を主催・運営しました。コミュニティ内の縦のつながりを生む場づくりに取り組みました。",
+    isExpanded: false,
+  },
+  {
+    year: "2025",
+    title: "Hackit",
+    description: "校内ハッカソン運営",
+    date: "8月",
+    details: "校内 13 サークルが所属する DevelopHub にて、3 日間開催のハッカソンを主催しました。",
+    isExpanded: false,
+  },
+  {
+    year: "2025",
+    title: "スマプロ 勉強会・LT会 運営",
+    description: "リーダーとして年間の勉強会・LT会を運営",
+    organization: "スマートフォンアプリ開発プロジェクト",
+    date: "通年",
+    details:
+      "スマプロのリーダーとして、新歓・Git/GitHub 勉強会・React ハンズオン・Android 勉強会・Web 勉強会、各種 LT 会（自己紹介LT・研修LT・全学期LT・夏休みLT・就活LT）、チーム開発のキックオフから発表までを年間を通して企画・運営しました。",
+    isExpanded: false,
+  },
+  {
+    year: "2024",
+    title: "スマプロハッカソン 運営",
+    description: "DMM スポンサーの校内ハッカソン（計30人弱）にメンバーとして参加",
+    organization: "スマートフォンアプリ開発プロジェクト",
+    date: "",
+    details: "DMM をスポンサーに迎えたスマプロハッカソンに携わりました。2〜4人 × 約8組の計30人弱が参加。自身はいちメンバーとして、後方からチームを見守る形で関わりました。",
+    isExpanded: false,
+  },
+  {
+    year: "2025",
+    title: "Nextend 運営",
+    description: "20人規模のLT会を開催（ファシリテーター＆デザイナー）",
+    date: "",
+    details: "「金沢ハックコネクト」的な20人規模のLT会「Nextend」を開催しました。ファシリテーター兼デザイナーとして、当日の進行と会のデザインを担いました。",
+    isExpanded: false,
+  },
+  {
+    year: "2025",
+    title: "DroidKaigi.collect #26 @Kanazawa 運営",
+    description: "GDGoC KIT 共催の地域カンファレンスを運営",
+    organization: "GDGoC KIT 共催",
+    date: "11月",
+    details:
+      "DroidKaigi.collect { #26 @Kanazawa } を GDGoC KIT 共催として運営に携わりました。地域での Android コミュニティイベントの企画・設営に関わりました。",
+    isExpanded: false,
+  },
+  {
+    year: "2026",
+    title: "リーダー雑談会 運営",
+    description: "プロジェクトリーダー同士の雑談会を運営",
+    date: "1月",
+    details: "各プロジェクトのリーダーが集まり交流する雑談会を運営しました（2026年1月開催）。リーダー間の横のつながりを生む場づくりに取り組みました。",
+    isExpanded: false,
+  },
+]
+
+// インターンデータ（就業型・短期インターン）
+export const internshipEvents: TimelineEvent[] = [
+  {
+    year: "2026",
+    title: "インターンシップ",
+    description: "2DAYインターン",
+    organization: "STORES 株式会社",
+    date: "6月",
+    details: "2日間の就業型インターンに参加し、実際の開発業務に触れました。",
+    isExpanded: false,
+  },
+  {
+    year: "2026",
+    title: "インターンシップ",
+    description: "1DAYインターン",
+    organization: "GA technologies",
+    date: "6月",
+    details: "GA technologies の1DAYインターンに参加し、事業内容や開発への理解を深めました。",
+    isExpanded: false,
+  },
   {
     year: "2026",
     title: "インターンシップ",
@@ -79,22 +297,6 @@ export const activitiesEvents: TimelineEvent[] = [
   },
   {
     year: "2025",
-    title: "Hackit",
-    description: "校内ハッカソン運営",
-    date: "8月",
-    details: "校内 13 サークルが所属する DevelopHub にて、3 日間開催のハッカソンを主催しました。",
-    isExpanded: false,
-  },
-  {
-    year: "2025",
-    title: "DeadLine Widgetリリース",
-    description: "ハッカソンの作品をリリース",
-    date: "6月",
-    details: "技育キャンプハッカソンに参加し、DeadLine Widgetをリリースしました。これは、締め切りを管理するためのウィジェットです。",
-    isExpanded: false,
-  },
-  {
-    year: "2025",
     title: "バックエンド設計のインターンシップ",
     description: "DB , API 設計に挑戦",
     organization: "株式会社ゆめみ",
@@ -122,23 +324,6 @@ export const activitiesEvents: TimelineEvent[] = [
   },
   {
     year: "2025",
-    title: "LogiLink開発開始",
-    description: "KITHackthonで受賞",
-    date: "3月",
-    details: "2024物流問題の解決を目指し、SNS型プラットフォームを開発しました。それぞれをネイティブで開発中です。",
-    isExpanded: false,
-  },
-  {
-    year: "2025",
-    title: "MichikusaMemoリリース",
-    description: "IOSアプリ初リリース",
-    date: "3月",
-    details:
-      "位置情報と紐付けて、メモを管理することができるアプリです。SwiftUIで実装し、リリースしました。DBのクラウド化を目指しています。",
-    isExpanded: false,
-  },
-  {
-    year: "2025",
     title: "インターンシップ",
     description: "KotlinでAIチャットボットアプリを開発",
     organization: "株式会社CyberAgent",
@@ -155,36 +340,18 @@ export const activitiesEvents: TimelineEvent[] = [
     details: "Swiftの基礎を学び、実務のお話を聞くことができました。",
     isExpanded: false,
   },
-  {
-    year: "2024",
-    title: "PresentAI開発",
-    description: "プレゼン資料作成アプリ",
-    date: "12月",
-    details:
-      "プレゼン資料を作成する際に、AIが自動でサポートしてくれるアプリです。これを通し、Web開発の基礎を学びました。",
-    isExpanded: false,
-  },
-  {
-    year: "2024",
-    title: "スマプロ参加",
-    description: "校内のプロジェクト活動に参加",
-    date: "4月",
-    details:
-      "ここで初めてアプリ開発に触れ、Androidアプリの開発を学びました。チームでの開発やコードレビューなど、エンジニアとしての基礎を学びました。",
-    isExpanded: false,
-  },
-  {
-    year: "2024",
-    title: "大学入学",
-    description: "金沢工業大学に入学",
-    date: "4月",
-    details: "情報工学を専攻し、プログラミングの基礎を学び始める",
-    isExpanded: false,
-  },
 ]
 
 // ハッカソンデータ
 export const hackathonEvents: TimelineEvent[] = [
+  {
+    year: "2026",
+    title: "Hack the Liquid 参加",
+    description: "2日間のハッカソンに参加",
+    date: "6月",
+    details: "2日間開催のハッカソン Hack the Liquid に参加しました。短期間でのチーム開発に取り組みました。",
+    isExpanded: false,
+  },
   {
     year: "2026",
     title: "スマプロハッカソン",
@@ -417,6 +584,8 @@ export const conferenceEvents: TimelineEvent[] = [
 // タブごとのデータマッピング
 export const timelineData = {
   activities: activitiesEvents,
+  events: eventsEvents,
+  internships: internshipEvents,
   hackathons: hackathonEvents,
   conferences: conferenceEvents,
 }

@@ -43,8 +43,27 @@ export const activitiesEvents: TimelineEvent[] = [
     title: "DevelopersHub リーダー",
     description: "BusStop を改称・再出発させたコミュニティのリーダー",
     organization: "DevelopersHub",
-    date: "2026年4月〜現在",
+    date: "4月〜",
     details: "BusStop 全体リーダーを務めたのち、プロジェクトを DevelopersHub へと改称し生まれ変わらせました。現在は DevelopersHub のリーダーとして運営・企画に従事しています。",
+    isExpanded: false,
+  },
+  {
+    year: "2026",
+    title: "セキプロ 副リーダー",
+    description: "セキュリティ系プロジェクトの副リーダー",
+    organization: "セキュリティスキルアッププロジェクト",
+    date: "4月〜",
+    details:
+      "セキュリティプロジェクト（セキプロ）に参加し、副リーダーとして運営に携わっています。新歓をはじめとした活動の企画・運営に関わり、2027年3月まで活動予定です。",
+    isExpanded: false,
+  },
+  {
+    year: "2026",
+    title: "KIT Mobile Hub 立ち上げサポート",
+    description: "モバイル開発コミュニティの立ち上げに協力メンバーとして参加",
+    date: "",
+    details:
+      "校内のモバイル開発コミュニティ「KIT Mobile Hub」の立ち上げを、協力メンバーとしてサポートしました。LT会などの活動に参加しています。",
     isExpanded: false,
   },
   {
@@ -52,9 +71,9 @@ export const activitiesEvents: TimelineEvent[] = [
     title: "スマプロ リーダー",
     description: "校内アプリ開発プロジェクトのリーダー",
     organization: "スマートフォンアプリ開発プロジェクト",
-    date: "2025年4月〜2026年3月",
+    date: "4月〜",
     details:
-      "スマートフォンアプリ開発プロジェクト（スマプロ）のリーダーを務めました。新歓・各種勉強会（Git/GitHub・React・Android・Web）・LT会・チーム開発のキックオフから発表までを企画・運営しました。",
+      "スマートフォンアプリ開発プロジェクト（スマプロ）のリーダーを2026年3月まで務めました。新歓・各種勉強会（Git/GitHub・React・Android・Web）・LT会・チーム開発のキックオフから発表までを企画・運営しました。",
     isExpanded: false,
   },
   {
@@ -62,7 +81,7 @@ export const activitiesEvents: TimelineEvent[] = [
     title: "GDGoC KIT Organizer",
     description: "学生コミュニティの Organizer を担当",
     organization: "GDGoC KIT",
-    date: "2025年4月頃〜2026年6月",
+    date: "4月頃〜",
     details:
       "Google Developer Groups on Campus（GDGoC）KIT の Organizer を、スマプロ リーダー就任と同時期（2025年春頃）から2026年6月まで務めました。DroidKaigi.collect #26 @Kanazawa を GDGoC KIT 共催として運営するなど、地域の技術コミュニティ活動に携わりました。",
     isExpanded: false,
@@ -103,31 +122,62 @@ export const activitiesEvents: TimelineEvent[] = [
   },
   {
     year: "2024",
-    title: "スマプロ参加",
-    description: "校内のプロジェクト活動に参加",
-    date: "4月",
-    details:
-      "ここで初めてアプリ開発に触れ、Androidアプリの開発を学びました。チームでの開発やコードレビューなど、エンジニアとしての基礎を学びました。",
-    isExpanded: false,
-  },
-  {
-    year: "2024",
-    title: "セキプロ 副リーダー",
-    description: "セキュリティ系プロジェクトの副リーダー",
-    organization: "セキュリティスキルアッププロジェクト",
-    date: "2026年4月〜現在（2027年3月まで活動予定）",
-    details:
-      "セキュリティプロジェクト（セキプロ）に参加し、副リーダーとして運営に携わっています。新歓をはじめとした活動の企画・運営に関わり、2027年3月まで活動予定です。",
-    isExpanded: false,
-  },
-  {
-    year: "2024",
     title: "BusStop アプリ班リーダー",
     description: "プロジェクトのアプリ班リーダー（のちに全体リーダー→DevelopersHub へ）",
     organization: "BusStop",
-    date: "2024年1月〜2026年3月",
+    date: "10月〜",
     details:
-      "1年次の春に BusStop のアプリ班リーダーとして参画し、アプリ開発を主導しました。2年次の春には BusStop 全体のリーダーへ就任し、その後プロジェクトを DevelopersHub へと改称・再出発させました。",
+      "1年次の10月頃に BusStop へ参加し、アプリ班リーダーとしてアプリ開発を主導しました。2年次の春には BusStop 全体のリーダーへ就任し、その後プロジェクトを DevelopersHub へと改称・再出発させました。",
+    isExpanded: false,
+  },
+  {
+    year: "2024",
+    title: "プログラミング道場 参加",
+    description: "プログラミングの基礎を固める学内コミュニティに参加",
+    organization: "プログラミング道場",
+    date: "10月〜",
+    details:
+      "1年次の10月頃からプログラミング道場に参加しています。コードを読む速さやコーディングの考え方など、プログラミングの基礎を固める活動に取り組んでいます。",
+    isExpanded: false,
+  },
+  {
+    year: "2024",
+    title: "GDGoC KIT 参加",
+    description: "学生技術コミュニティに参加",
+    organization: "GDGoC KIT",
+    date: "春頃〜",
+    details:
+      "1年次の春頃から Google Developer Groups on Campus（GDGoC）KIT に参加しました。勉強会やイベントを通して技術コミュニティ活動に触れ、のちに Organizer を務めています。",
+    isExpanded: false,
+  },
+  {
+    year: "2024",
+    title: "スマプロ参加",
+    description: "校内のプロジェクト活動に入学当初から参加",
+    organization: "スマートフォンアプリ開発プロジェクト",
+    date: "4月〜",
+    details:
+      "入学当初から参加し、ここで初めてアプリ開発に触れ、Androidアプリの開発を学びました。チームでの開発やコードレビューなど、エンジニアとしての基礎を学びました。",
+    isExpanded: false,
+  },
+  {
+    year: "2024",
+    title: "データドリーマーズ 所属",
+    description: "データサイエンス系の学内プロジェクトに所属",
+    organization: "データドリーマーズ",
+    date: "4月〜",
+    details:
+      "入学当初からデータサイエンス系の学内プロジェクト「データドリーマーズ」に所属しています。データ分析に関する活動や情報共有に取り組んでいます。",
+    isExpanded: false,
+  },
+  {
+    year: "2024",
+    title: "関ヶ原プロジェクト 参加",
+    description: "学内プロジェクト「関プロ」に参加",
+    organization: "関ヶ原プロジェクト",
+    date: "4月〜",
+    details:
+      "入学当初から関ヶ原プロジェクト（関プロ）に参加しています。設計から環境構築・実装まで、チームでの開発活動に取り組んでいます。",
     isExpanded: false,
   },
   {
@@ -151,18 +201,73 @@ export const activitiesEvents: TimelineEvent[] = [
 export const eventsEvents: TimelineEvent[] = [
   {
     year: "2026",
-    title: "DevelopersHub 交流会 主催",
+    title: "HackIT 2026 運営",
+    description: "校内ハッカソンの2回目の開催を運営（1月準備開始・7月開催）",
+    organization: "DevelopersHub",
+    date: "1月〜",
+    details:
+      "校内 13 サークルが所属する DevelopersHub のハッカソン「HackIT」の2回目の開催に向けて、1月から準備を開始し、7月に開催しました。企画・広報・スポンサー調整などの運営に携わりました。",
+    isExpanded: false,
+  },
+  {
+    year: "2026",
+    title: "DevelopersHub 交流会 運営",
     description: "1〜3年生の学年横断交流会を運営",
     date: "6月",
-    details: "DevelopersHub にて、1〜3年生が学年を越えて交流する会を主催・運営しました。コミュニティ内の縦のつながりを生む場づくりに取り組みました。",
+    details: "DevelopersHub にて、1〜3年生が学年を越えて交流する会を企画・運営しました。コミュニティ内の縦のつながりを生む場づくりに取り組みました。",
+    isExpanded: false,
+  },
+  {
+    year: "2026",
+    title: "新入生交流イベント 運営",
+    description: "新入生向けのプロジェクト紹介・勧誘イベントを運営",
+    date: "4月",
+    details: "新入生に向けて、学内プロジェクトの紹介や勧誘を行う交流イベントの運営に携わりました。",
+    isExpanded: false,
+  },
+  {
+    year: "2026",
+    title: "スマプロハッカソン 運営",
+    description: "スマプロのリーダーとして校内ハッカソンを運営",
+    organization: "スマートフォンアプリ開発プロジェクト",
+    date: "2月",
+    details: "スマプロのリーダーとして、スマプロハッカソンの企画・運営を行いました。自身もチームの一員として参加しました。",
+    isExpanded: false,
+  },
+  {
+    year: "2026",
+    title: "リーダー雑談会 運営",
+    description: "プロジェクトリーダー同士の雑談会を運営",
+    date: "1月",
+    details: "各プロジェクトのリーダーが集まり交流する雑談会を運営しました。リーダー間の横のつながりを生む場づくりに取り組みました。",
     isExpanded: false,
   },
   {
     year: "2025",
-    title: "Hackit",
+    title: "DroidKaigi.collect #26 @Kanazawa 運営",
+    description: "GDGoC KIT 共催の地域カンファレンスを運営",
+    organization: "GDGoC KIT 共催",
+    date: "11月",
+    details:
+      "DroidKaigi.collect { #26 @Kanazawa } を GDGoC KIT 共催として運営に携わりました。地域での Android コミュニティイベントの企画・設営に関わりました。",
+    isExpanded: false,
+  },
+  {
+    year: "2025",
+    title: "HackIT 運営",
     description: "校内ハッカソン運営",
+    organization: "DevelopersHub",
     date: "8月",
-    details: "校内 13 サークルが所属する DevelopHub にて、3 日間開催のハッカソンを主催しました。",
+    details: "校内 13 サークルが所属する DevelopersHub にて、3 日間開催のハッカソン「HackIT」を運営しました。",
+    isExpanded: false,
+  },
+  {
+    year: "2025",
+    title: "Next Kanazawa Connect 運営",
+    description: "20人規模のLT会を運営（ファシリテーター＆デザイナー）",
+    date: "夏頃",
+    details:
+      "NextEnd 関連イベントとして、20人規模のLT会「Next Kanazawa Connect」を開催しました。ファシリテーター兼デザイナーとして、当日の進行と会のデザインを担いました。",
     isExpanded: false,
   },
   {
@@ -177,37 +282,12 @@ export const eventsEvents: TimelineEvent[] = [
   },
   {
     year: "2024",
-    title: "スマプロハッカソン 運営",
-    description: "DMM スポンサーの校内ハッカソン（計30人弱）にメンバーとして参加",
+    title: "スマプロハッカソン 運営補助",
+    description: "先輩代の運営を手伝いつつ、参加者としても活動",
     organization: "スマートフォンアプリ開発プロジェクト",
-    date: "",
-    details: "DMM をスポンサーに迎えたスマプロハッカソンに携わりました。2〜4人 × 約8組の計30人弱が参加。自身はいちメンバーとして、後方からチームを見守る形で関わりました。",
-    isExpanded: false,
-  },
-  {
-    year: "2025",
-    title: "Nextend 運営",
-    description: "20人規模のLT会を開催（ファシリテーター＆デザイナー）",
-    date: "",
-    details: "「金沢ハックコネクト」的な20人規模のLT会「Nextend」を開催しました。ファシリテーター兼デザイナーとして、当日の進行と会のデザインを担いました。",
-    isExpanded: false,
-  },
-  {
-    year: "2025",
-    title: "DroidKaigi.collect #26 @Kanazawa 運営",
-    description: "GDGoC KIT 共催の地域カンファレンスを運営",
-    organization: "GDGoC KIT 共催",
     date: "11月",
     details:
-      "DroidKaigi.collect { #26 @Kanazawa } を GDGoC KIT 共催として運営に携わりました。地域での Android コミュニティイベントの企画・設営に関わりました。",
-    isExpanded: false,
-  },
-  {
-    year: "2026",
-    title: "リーダー雑談会 運営",
-    description: "プロジェクトリーダー同士の雑談会を運営",
-    date: "1月",
-    details: "各プロジェクトのリーダーが集まり交流する雑談会を運営しました（2026年1月開催）。リーダー間の横のつながりを生む場づくりに取り組みました。",
+      "DMM をスポンサーに迎えたスマプロハッカソン（2〜4人 × 約8組、計30人弱）にて、先輩代の運営を手伝いながら、自身も参加者として活動しました。",
     isExpanded: false,
   },
 ]

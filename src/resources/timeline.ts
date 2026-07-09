@@ -81,9 +81,9 @@ export const activitiesEvents: TimelineEvent[] = [
     title: "GDGoC KIT Organizer",
     description: "学生コミュニティの Organizer を担当",
     organization: "GDGoC KIT",
-    date: "4月頃〜",
+    date: "2025年〜2026年6月",
     details:
-      "Google Developer Groups on Campus（GDGoC）KIT の Organizer を、スマプロ リーダー就任と同時期（2025年春頃）から2026年6月まで務めました。DroidKaigi.collect #26 @Kanazawa を GDGoC KIT 共催として運営するなど、地域の技術コミュニティ活動に携わりました。",
+      "Google Developer Groups on Campus（GDGoC）KIT の Organizer を、2025年から2026年6月まで務めました。DroidKaigi.collect #26 @Kanazawa を GDGoC KIT 共催として運営するなど、地域の技術コミュニティ活動に携わりました。",
     isExpanded: false,
   },
   {
@@ -127,7 +127,7 @@ export const activitiesEvents: TimelineEvent[] = [
     organization: "BusStop",
     date: "10月〜",
     details:
-      "1年次の10月頃に BusStop へ参加し、アプリ班リーダーとしてアプリ開発を主導しました。2年次の春には BusStop 全体のリーダーへ就任し、その後プロジェクトを DevelopersHub へと改称・再出発させました。",
+      "1年次の10月に BusStop へ参加し、アプリ班リーダーとしてアプリ開発を主導しました。2年次の春には BusStop 全体のリーダーへ就任し、その後プロジェクトを DevelopersHub へと改称・再出発させました。",
     isExpanded: false,
   },
   {
@@ -137,7 +137,7 @@ export const activitiesEvents: TimelineEvent[] = [
     organization: "プログラミング道場",
     date: "10月〜",
     details:
-      "1年次の10月頃からプログラミング道場に参加しています。コードを読む速さやコーディングの考え方など、プログラミングの基礎を固める活動に取り組んでいます。",
+      "1年次の10月からプログラミング道場に参加しています。コードを読む速さやコーディングの考え方など、プログラミングの基礎を固める活動に取り組んでいます。",
     isExpanded: false,
   },
   {
@@ -145,9 +145,9 @@ export const activitiesEvents: TimelineEvent[] = [
     title: "GDGoC KIT 参加",
     description: "学生技術コミュニティに参加",
     organization: "GDGoC KIT",
-    date: "春頃〜",
+    date: "2024年〜",
     details:
-      "1年次の春頃から Google Developer Groups on Campus（GDGoC）KIT に参加しました。勉強会やイベントを通して技術コミュニティ活動に触れ、のちに Organizer を務めています。",
+      "1年次（2024年度）に Google Developer Groups on Campus（GDGoC）KIT に参加しました。勉強会やイベントを通して技術コミュニティ活動に触れ、のちに Organizer を務めています。",
     isExpanded: false,
   },
   {
@@ -254,20 +254,20 @@ export const eventsEvents: TimelineEvent[] = [
   },
   {
     year: "2025",
+    title: "Next Kanazawa Connect 運営",
+    description: "20人規模のLT会を運営（ファシリテーター＆デザイナー）",
+    date: "10月",
+    details:
+      "NextEnd 関連イベントとして、20人規模のLT会「Next Kanazawa Connect」を開催しました。ファシリテーター兼デザイナーとして、当日の進行と会のデザインを担いました。",
+    isExpanded: false,
+  },
+  {
+    year: "2025",
     title: "HackIT 運営",
     description: "校内ハッカソン運営",
     organization: "DevelopersHub",
     date: "8月",
     details: "校内 13 サークルが所属する DevelopersHub にて、3 日間開催のハッカソン「HackIT」を運営しました。",
-    isExpanded: false,
-  },
-  {
-    year: "2025",
-    title: "Next Kanazawa Connect 運営",
-    description: "20人規模のLT会を運営（ファシリテーター＆デザイナー）",
-    date: "夏頃",
-    details:
-      "NextEnd 関連イベントとして、20人規模のLT会「Next Kanazawa Connect」を開催しました。ファシリテーター兼デザイナーとして、当日の進行と会のデザインを担いました。",
     isExpanded: false,
   },
   {

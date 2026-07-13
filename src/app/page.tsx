@@ -3,7 +3,7 @@
 import Image from "next/image"
 import { useState } from "react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog"
-import { ChevronDown, ChevronUp, Menu, X } from "lucide-react"
+import { ChevronDown, ChevronUp, Menu, X, ExternalLink } from "lucide-react"
 import { projects, type Project } from "@/resources/projects"
 import { timelineData, timelineTabs, type TimelineEvent, type TimelineTab } from "@/resources/timeline"
 import { skills } from "@/resources/skills"
@@ -148,7 +148,10 @@ export default function Home() {
                   hover:text-white hover:shadow-lg hover:-translate-y-1 active:scale-95 
                   transition transform flex flex-col items-start"
               >
-                <span className="text-lg sm:text-xl font-bold mb-2 sm:mb-4">{project.title}</span>
+                <span className="text-lg sm:text-xl font-bold mb-2 sm:mb-4 flex items-center gap-1.5">
+                  {project.title}
+                  {project.link && <ExternalLink size={16} className="opacity-70" />}
+                </span>
                 <span className="text-sm sm:text-base text-gray-700 hover:text-white">{project.desc}</span>
               </button>
             ))}
@@ -183,6 +186,17 @@ export default function Home() {
                   ))}
                 </div>
               </div>
+              {selectedProject.link && (
+                <a
+                  href={selectedProject.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-indigo-600 text-white text-sm font-medium px-4 py-2 rounded-full hover:bg-indigo-700 transition shadow-md"
+                >
+                  <ExternalLink size={16} />
+                  サイトを見る
+                </a>
+              )}
             </div>
           </DialogContent>
         )}

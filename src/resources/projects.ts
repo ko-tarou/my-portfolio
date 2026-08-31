@@ -26,6 +26,13 @@ export const projects: Project[] = [
     link: "https://leaders-meetup-bot.akokoa1221.workers.dev",
   },
   {
+    title: "Dub エコシステム",
+    desc: "コミュニティ内製のグループウェア",
+    details:
+      "DevelopersHub のためのグループウェアを内製し、2026年8月から本番稼働しています。gateway を含む 16 の Cloudflare Workers サービスで構成し、認証は自前の email/password（セッション方式）を主軸に設計しました。Gmail 風のメールクライアント（mail-gateway）と Slack 風のチャット（chat-service）、Chrome 風のアプリランチャー、Cloudflare Email Routing と連携したメンバー名簿などを実装しています。有料の Cloudflare Queues への依存を、D1 の outbox テーブルと Durable Objects の alarm で組んだ自作の無料キューに置き換え、$0 運用を実現しました。demo / staging / 本番の3段デプロイと、「確認した」ラベルによる承認ゲートで安全にリリースしています。",
+    technologies: ["Cloudflare Workers", "Hono", "D1", "Durable Objects", "React", "TypeScript"],
+  },
+  {
     title: "捌 (Sabaki)",
     desc: "ターミナル・エディタ・ブラウザ統合のmacOSアプリ",
     details:

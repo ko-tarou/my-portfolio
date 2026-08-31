@@ -48,13 +48,6 @@ export const projects: Project[] = [
     link: "https://play.google.com/store/apps/details?id=com.honmushi.notybus",
   },
   {
-    title: "TaskTalk",
-    desc: "タスク管理×チャット統合アプリ（長期インターン）",
-    details:
-      "AlphaOmega での長期インターンで開発している、チームのタスクをトーク形式で扱う本番プロダクトです。タスクの「完了確認フロー」の新規設計・実装、モーダル内でのスレッド表示、スクロール制御の全面刷新、グループ一括招待APIの生SQL化などを担当しました。WebSocket の送信者なりすましの脆弱性を発見し、issue として報告しています。",
-    technologies: ["TypeScript", "Next.js", "Prisma", "Cloud Run"],
-  },
-  {
     title: "HackIT 2026",
     desc: "学内ハッカソンの主催と公式サイト内製",
     details:

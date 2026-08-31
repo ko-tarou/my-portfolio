@@ -446,8 +446,8 @@ export const internshipEvents: TimelineEvent[] = [
 export const hackathonEvents: TimelineEvent[] = [
   {
     year: "2026",
-    title: "SCREACT（THE HACK 2026）",
-    description: "手の指ジェスチャで PC 画面を操作・描画",
+    title: "THE HACK 参加",
+    description: "手の指ジェスチャで PC 画面を操作・描画（SCREACT）",
     organization: "",
     date: "8月",
     details:

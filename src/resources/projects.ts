@@ -26,6 +26,13 @@ export const projects: Project[] = [
     link: "https://leaders-meetup-bot.akokoa1221.workers.dev",
   },
   {
+    title: "Dub エコシステム",
+    desc: "コミュニティ内製のグループウェア",
+    details:
+      "DevelopersHub のためのグループウェアを内製し、2026年8月から本番稼働しています。gateway を含む 16 の Cloudflare Workers サービスで構成し、認証は自前の email/password（セッション方式）を主軸に設計しました。Gmail 風のメールクライアント（mail-gateway）と Slack 風のチャット（chat-service）、Chrome 風のアプリランチャー、Cloudflare Email Routing と連携したメンバー名簿などを実装しています。有料の Cloudflare Queues への依存を、D1 の outbox テーブルと Durable Objects の alarm で組んだ自作の無料キューに置き換え、$0 運用を実現しました。demo / staging / 本番の3段デプロイと、「確認した」ラベルによる承認ゲートで安全にリリースしています。",
+    technologies: ["Cloudflare Workers", "Hono", "D1", "Durable Objects", "React", "TypeScript"],
+  },
+  {
     title: "捌 (Sabaki)",
     desc: "ターミナル・エディタ・ブラウザ統合のmacOSアプリ",
     details:
@@ -39,13 +46,6 @@ export const projects: Project[] = [
       "石川県野々市市のコミュニティバス「のってぃ」の現在地をリアルタイムに表示するアプリで、Google Play で公開しています。Raspberry Pi を車載して位置情報を取得し、Firebase 経由で地図上に反映する構成です。15人チームのPM兼 Flutter エンジニアとして、開発の進行管理・レビュー・リリース作業を担当しました。",
     technologies: ["Flutter", "Firebase", "Raspberry Pi", "Google Maps API"],
     link: "https://play.google.com/store/apps/details?id=com.honmushi.notybus",
-  },
-  {
-    title: "TaskTalk",
-    desc: "タスク管理×チャット統合アプリ（長期インターン）",
-    details:
-      "AlphaOmega での長期インターンで開発している、チームのタスクをトーク形式で扱う本番プロダクトです。タスクの「完了確認フロー」の新規設計・実装、モーダル内でのスレッド表示、スクロール制御の全面刷新、グループ一括招待APIの生SQL化などを担当しました。WebSocket の送信者なりすましの脆弱性を発見し、issue として報告しています。",
-    technologies: ["TypeScript", "Next.js", "Prisma", "Cloud Run"],
   },
   {
     title: "HackIT 2026",

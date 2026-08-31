@@ -14,4 +14,8 @@ export const skills: string[] = [
   "Docker",
   "LLM",
   "Ruby",
+  "Cloudflare Workers",
+  "Hono",
+  "Durable Objects",
+  "D1",
 ]

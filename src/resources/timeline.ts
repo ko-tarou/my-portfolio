@@ -201,6 +201,16 @@ export const activitiesEvents: TimelineEvent[] = [
 export const eventsEvents: TimelineEvent[] = [
   {
     year: "2026",
+    title: "北陸ITカンファレンス 主催準備",
+    description: "DevelopersHub 主催の地域 IT カンファレンスを準備中",
+    organization: "DevelopersHub",
+    date: "2026年〜",
+    details:
+      "DevelopersHub が主催する地域の IT カンファレンス「北陸ITカンファレンス」の立ち上げを進めています。2026年8月5日にイベント名を決定し、企画・法人化・会場調整などの準備を主導しています。開催に向けて準備中です。",
+    isExpanded: false,
+  },
+  {
+    year: "2026",
     title: "HackIT 2026 運営",
     description: "校内ハッカソンの2回目の開催を運営（1月準備開始・7月開催）",
     organization: "DevelopersHub",
@@ -294,6 +304,16 @@ export const eventsEvents: TimelineEvent[] = [
 
 // インターンデータ（就業型・短期インターン）
 export const internshipEvents: TimelineEvent[] = [
+  {
+    year: "2026",
+    title: "インターンシップ",
+    description: "Android 実務型インターン",
+    organization: "サイボウズ株式会社",
+    date: "2026年",
+    details:
+      "サイボウズの実務型インターンに参加し、業務プロダクトの文脈での Android / モバイル開発に取り組みました。",
+    isExpanded: false,
+  },
   {
     year: "2026",
     title: "インターンシップ",
@@ -424,6 +444,16 @@ export const internshipEvents: TimelineEvent[] = [
 
 // ハッカソンデータ
 export const hackathonEvents: TimelineEvent[] = [
+  {
+    year: "2026",
+    title: "THE HACK 参加",
+    description: "手の指ジェスチャで PC 画面を操作・描画（SCREACT）",
+    organization: "",
+    date: "8月",
+    details:
+      "THE HACK 2026（Team35）で開発した、手の指のジェスチャで PC の画面を操作・描画するプロダクトです。Android 側でカメラ映像から MediaPipe の 21 ランドマークを認識し、その結果を UDP/Bonjour で Flutter Desktop に反映します。ペン描画・消しゴム・カラーパレットといった描画機能を備え、iOS では Vision フレームワークによる認識にも対応しました。本戦は2026年8月22日に開催されました。",
+    isExpanded: false,
+  },
   {
     year: "2026",
     title: "Hack the Liquid 参加",

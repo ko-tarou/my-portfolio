@@ -448,10 +448,10 @@ export const hackathonEvents: TimelineEvent[] = [
     year: "2026",
     title: "THE HACK 参加",
     description: "手の指ジェスチャで PC 画面を操作・描画（SCREACT）",
-    organization: "",
+    organization: "大賞",
     date: "8月",
     details:
-      "THE HACK 2026（Team35）で開発した、手の指のジェスチャで PC の画面を操作・描画するプロダクトです。Android 側でカメラ映像から MediaPipe の 21 ランドマークを認識し、その結果を UDP/Bonjour で Flutter Desktop に反映します。ペン描画・消しゴム・カラーパレットといった描画機能を備え、iOS では Vision フレームワークによる認識にも対応しました。本戦は2026年8月22日に開催されました。",
+      "THE HACK 2026（Team35）で開発した、手の指のジェスチャで PC の画面を操作・描画するプロダクトです。Android 側でカメラ映像から MediaPipe の 21 ランドマークを認識し、その結果を UDP/Bonjour で Flutter Desktop に反映します。ペン描画・消しゴム・カラーパレットといった描画機能を備え、iOS では Vision フレームワークによる認識にも対応しました。本戦は2026年8月22日に開催され、大賞を受賞しました。",
     isExpanded: false,
   },
   {

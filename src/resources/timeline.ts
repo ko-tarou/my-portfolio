@@ -316,6 +316,15 @@ export const internshipEvents: TimelineEvent[] = [
   {
     year: "2026",
     title: "インターンシップ",
+    description: "就業型インターン 2週間",
+    organization: "株式会社PKSHA Technology",
+    date: "9月",
+    details: "2026年9月7日から9月18日まで、PKSHA Technology のサマーインターンに参加し、実際の開発業務に取り組みました。",
+    isExpanded: false,
+  },
+  {
+    year: "2026",
+    title: "インターンシップ",
     description: "Android 実務型インターン",
     organization: "サイボウズ株式会社",
     date: "2026年",
@@ -456,10 +465,10 @@ export const hackathonEvents: TimelineEvent[] = [
   {
     year: "2026",
     title: "JPHACKS2026参加",
-    description: "話すとアプリそのものが変わる 'Morph'",
+    description: "話すとアプリそのものが変わる 'Tailor It'",
     date: "10月",
     details:
-      "2人チームで、声で頼むと画面の構成そのものが変わる iOS アプリを開発しました。サーバーから画面の定義を受け取って描画する Server-Driven UI の仕組みで、2日間でプルリクエスト176本を積み上げました。大会後も「Tailor It」として開発を続け、App Store への公開を目指しています。",
+      "2人チームで、声で頼むと画面の構成そのものが変わる iOS アプリ「Tailor It」を開発しました。サーバーから画面の定義を受け取って描画する Server-Driven UI の仕組みで、2日間でプルリクエスト176本を積み上げました。大会後も開発を続け、App Store への公開を目指しています。",
     isExpanded: false,
   },
   {
@@ -633,6 +642,14 @@ export const conferenceEvents: TimelineEvent[] = [
     description: "全国語学教育学会の合同大会に参加しました",
     date: "10月",
     details: "2026年10月10日・11日に金沢工業大学で開催された、全国語学教育学会（JALT）CUE・GALE SIG 合同大会に参加しました。",
+    isExpanded: false,
+  },
+  {
+    year: "2026",
+    title: "BuriKaigi",
+    description: "2年ぶりの BuriKaigi に参加しました",
+    date: "1月",
+    details: "2026年1月9日・10日に富山国際会議場で開催された BuriKaigi 2026 に参加しました。",
     isExpanded: false,
   },
   {

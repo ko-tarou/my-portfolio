@@ -307,6 +307,24 @@ export const internshipEvents: TimelineEvent[] = [
   {
     year: "2026",
     title: "インターンシップ",
+    description: "1か月の就業型インターン",
+    organization: "Sansan株式会社",
+    date: "9月〜10月",
+    details: "2026年9月24日から10月23日まで、Sansan の就業型インターンに参加し、実際の開発業務に取り組みました。",
+    isExpanded: false,
+  },
+  {
+    year: "2026",
+    title: "インターンシップ",
+    description: "就業型インターン 2週間",
+    organization: "株式会社PKSHA Technology",
+    date: "9月",
+    details: "2026年9月7日から9月18日まで、PKSHA Technology のサマーインターンに参加し、実際の開発業務に取り組みました。",
+    isExpanded: false,
+  },
+  {
+    year: "2026",
+    title: "インターンシップ",
     description: "Android 実務型インターン",
     organization: "サイボウズ株式会社",
     date: "2026年",
@@ -444,6 +462,15 @@ export const internshipEvents: TimelineEvent[] = [
 
 // ハッカソンデータ
 export const hackathonEvents: TimelineEvent[] = [
+  {
+    year: "2026",
+    title: "JPHACKS2026参加",
+    description: "話すとアプリそのものが変わる 'Tailor It'",
+    date: "10月",
+    details:
+      "2人チームで、声で頼むと画面の構成そのものが変わる iOS アプリ「Tailor It」を開発しました。サーバーから画面の定義を受け取って描画する Server-Driven UI の仕組みで、2日間でプルリクエスト176本を積み上げました。大会後も開発を続け、App Store への公開を目指しています。",
+    isExpanded: false,
+  },
   {
     year: "2026",
     title: "THE HACK 参加",
@@ -601,6 +628,30 @@ export const hackathonEvents: TimelineEvent[] = [
 
 // カンファレンスデータ
 export const conferenceEvents: TimelineEvent[] = [
+  {
+    year: "2026",
+    title: "KomeKaigi",
+    description: "KomeKaigi に参加しました",
+    date: "10月",
+    details: "2026年10月31日開催の KomeKaigi に参加しました。",
+    isExpanded: false,
+  },
+  {
+    year: "2026",
+    title: "JALT CUE・GALE SIG 合同大会",
+    description: "全国語学教育学会の合同大会に参加しました",
+    date: "10月",
+    details: "2026年10月10日・11日に金沢工業大学で開催された、全国語学教育学会（JALT）CUE・GALE SIG 合同大会に参加しました。",
+    isExpanded: false,
+  },
+  {
+    year: "2026",
+    title: "BuriKaigi",
+    description: "2年ぶりの BuriKaigi に参加しました",
+    date: "1月",
+    details: "2026年1月9日・10日に富山国際会議場で開催された BuriKaigi 2026 に参加しました。",
+    isExpanded: false,
+  },
   {
     year: "2025",
     title: "アーキテクチャカンファレンス",
